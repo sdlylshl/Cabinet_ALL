@@ -1,0 +1,100 @@
+
+### Include
+!*.doc
+!*.txt
+### Compress
+*.rar
+*.zip
+
+### Common
+*.o
+*.a
+*.db
+*.htm
+*.html
+*.bak
+*.tmp
+*.log
+*.obj
+*.Cache
+*.tags*
+*~
+~$*
+
+## Build results
+[Dd]ebug		#Debug
+[Rr]elease		#Relese
+[Bb]uild		#Build			
+[Bb]in			#Bin
+[Oo]bj			#Obj
+[Oo]ut[Pp]ut	#Output
+
+### Altium Designer
+
+__Previews
+History
+Project Outputs for *
+CAM for *
+
+*.log
+*.ERC
+*.Cam
+*.Dat
+*.Annotation
+*.schPreview
+*.SchDocPreview
+*.pcblib_viewstate
+*.pcbdoc_viewstate
+##Outputs
+*.DRC 		#Design Rule Check Report
+*.Drr 		#Altium NC Drill Report File
+*.net 		#Altium Netlist File
+*.Nsx 		#Simulation Netlist Document
+*.OutJob 	#Altium Output Job File
+*.rep 		#Report File
+*.Rpt 		#Report File
+##EDIF
+*.edf
+*.edi
+*.edif
+*.ediflib
+*.edn
+##Gerber
+##other
+*.BomDoc
+*.Constraint
+*.DBLib
+*.DBLink
+*.FpgTrg
+##PCB
+*.pcb3d
+*.pcb3dlib
+##Schematic
+*.dot 		#Altium Schematic Template
+*.FSMDoc 	#Altium FSM Document
+*.OpenBus 	#altium OpenBus Document
+*.shcDot 	#Altium Schematic Document
+##Scripts
+*.Bas 		#Altium Script Document
+*.SrcDoc
+*.Tcl
+##Simulation
+*.Ckt 		#Simulation Sub-Circuit
+*.LaxAn 	#Logic Analyser Analog File
+*.LaxDig 	#Logic Analyser Digital File
+*.Mdl 		#Simulation Model
+*.Pld 		#CUPL PLD File
+*.Pwl 		#Simulation Piecewise Linear Description
+*.Sdf  		#Altium Simulation Data File
+*.si 		#CUPL Simulation Input File
+*.so 		#Digital Waveform File
+##VHDL
+
+### STM32
+
+/output
+
+*.lst
+*.orig
+*.dep
+*.map
