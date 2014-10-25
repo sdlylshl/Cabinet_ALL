@@ -37,6 +37,23 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
+DocumentPath=lib\2440PCBV5_20140403.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=ABFOCMEG
+
+[Document2]
 DocumentPath=sch\CPU.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -51,9 +68,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=YBGPKCEI
+DocumentUniqueId=QRFFCGWI
 
-[Document2]
+[Document3]
 DocumentPath=sch\TAJ1051T.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -68,9 +85,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=BGTHXHII
+DocumentUniqueId=UHKOKOOR
 
-[Document3]
+[Document4]
 DocumentPath=Cabinet_device.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -85,9 +102,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=JAXQKHRT
+DocumentUniqueId=TPVPCYCI
 
-[Document4]
+[Document5]
 DocumentPath=sch\W5500+HR911105A.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -104,7 +121,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HMWWJKDM
 
-[Document5]
+[Document6]
 DocumentPath=sch\SIM900A.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -121,23 +138,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FMRLXRGE
 
-[Document6]
-DocumentPath=sch\DoorSensor.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=3
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=NPRMWUWR
-
 [Document7]
 DocumentPath=sch\LM2596.SchDoc
 AnnotationEnabled=1
@@ -153,26 +153,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=XLTNLNCA
+DocumentUniqueId=QLCPXXFC
 
 [Document8]
-DocumentPath=sch\DoorLocker.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=2
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=UBFKWPFY
-
-[Document9]
 DocumentPath=sch\DownLoad.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -187,9 +170,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=BCRYOWBI
+DocumentUniqueId=DMTUOWOA
 
-[Document10]
+[Document9]
 DocumentPath=sch\Door.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -204,7 +187,62 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=BHXHFSTP
+DocumentUniqueId=FCWXCTCO
+
+[Document10]
+DocumentPath=Cabinet.Annotation
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document11]
+DocumentPath=pcb\Cabinet_Device.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=LCBQXOUT
+
+[Document12]
+DocumentPath=..\µÁ»›.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=FYIAATLV
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Cabinet\Design Rule Check - Cabinet_Device.html
+DItemRevisionGUID=
 
 [Configuration1]
 Name=Default Configuration
@@ -396,51 +434,51 @@ OutputName9=Assembler Source Prints
 OutputDocumentPath9=
 OutputVariantName9=
 OutputDefault9=0
-PageOptions9=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+PageOptions9=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4
 OutputType10=C Source Print
 OutputName10=C Source Prints
 OutputDocumentPath10=
 OutputVariantName10=
 OutputDefault10=0
-PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4
 OutputType11=C/C++ Header Print
 OutputName11=C/C++ Header Prints
 OutputDocumentPath11=
 OutputVariantName11=
 OutputDefault11=0
-PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4
 OutputType12=C++ Source Print
 OutputName12=C++ Source Prints
 OutputDocumentPath12=
 OutputVariantName12=
 OutputDefault12=0
-PageOptions12=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType13=FSM Print
-OutputName13=FSM Prints
+PageOptions12=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4
+OutputType13=PCB 3D Video
+OutputName13=PCB 3D Video
 OutputDocumentPath13=
-OutputVariantName13=
+OutputVariantName13=[No Variations]
 OutputDefault13=0
-PageOptions13=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType14=PCB 3D Video
-OutputName14=PCB 3D Video
+PageOptions13=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4
+OutputType14=PCBLIB Print
+OutputName14=PCBLIB Prints
 OutputDocumentPath14=
-OutputVariantName14=[No Variations]
+OutputVariantName14=
 OutputDefault14=0
-PageOptions14=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType15=PCBLIB Print
-OutputName15=PCBLIB Prints
+PageOptions14=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4
+OutputType15=Report Print
+OutputName15=Report Prints
 OutputDocumentPath15=
 OutputVariantName15=
 OutputDefault15=0
-PageOptions15=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType16=Report Print
-OutputName16=Report Prints
+PageOptions15=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4
+OutputType16=VHDL Print
+OutputName16=VHDL Prints
 OutputDocumentPath16=
 OutputVariantName16=
 OutputDefault16=0
-PageOptions16=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType17=VHDL Print
-OutputName17=VHDL Prints
+PageOptions16=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4
+OutputType17=FSM Print
+OutputName17=FSM Prints
 OutputDocumentPath17=
 OutputVariantName17=
 OutputDefault17=0
@@ -528,7 +566,7 @@ OutputName10=Report Board Stack
 OutputDocumentPath10=
 OutputVariantName10=
 OutputDefault10=0
-PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4
 
 [OutputGroup6]
 Name=Report Outputs
@@ -774,7 +812,7 @@ OutputName4=Differences Report
 OutputDocumentPath4=
 OutputVariantName4=
 OutputDefault4=0
-PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4
 OutputType5=Footprint Comparison Report
 OutputName5=Footprint Comparison Report
 OutputDocumentPath5=
@@ -1072,6 +1110,254 @@ MatchStrictly2=1
 PhysicalNamingFormat=$Component_$RoomName
 GlobalIndexSortOrder=3
 GlobalIndexSortLocation=0
+UniqueIDPath0=
+DocumentName0=Cabinet_device.SchDoc
+IsEnabled0=1
+SelectionScope0=All
+Order0=1
+IndexEnabled0=0
+IndexStartValue0=1
+Suffix0=
+UniqueIDPath1=\LFICAGCC
+DocumentName1=CPU.SchDoc
+IsEnabled1=1
+SelectionScope1=All
+Order1=2
+IndexEnabled1=0
+IndexStartValue1=1
+Suffix1=
+UniqueIDPath2=\LFICAGCC\1JTMETERG
+DocumentName2=Door.SchDoc
+IsEnabled2=1
+SelectionScope2=All
+Order2=11
+IndexEnabled2=0
+IndexStartValue2=1
+Suffix2=
+UniqueIDPath3=\LFICAGCC\2JTMETERG
+DocumentName3=Door.SchDoc
+IsEnabled3=1
+SelectionScope3=All
+Order3=12
+IndexEnabled3=0
+IndexStartValue3=1
+Suffix3=
+UniqueIDPath4=\LFICAGCC\3JTMETERG
+DocumentName4=Door.SchDoc
+IsEnabled4=1
+SelectionScope4=All
+Order4=13
+IndexEnabled4=0
+IndexStartValue4=1
+Suffix4=
+UniqueIDPath5=\LFICAGCC\4JTMETERG
+DocumentName5=Door.SchDoc
+IsEnabled5=1
+SelectionScope5=All
+Order5=14
+IndexEnabled5=0
+IndexStartValue5=1
+Suffix5=
+UniqueIDPath6=\LFICAGCC\5JTMETERG
+DocumentName6=Door.SchDoc
+IsEnabled6=1
+SelectionScope6=All
+Order6=15
+IndexEnabled6=0
+IndexStartValue6=1
+Suffix6=
+UniqueIDPath7=\LFICAGCC\6JTMETERG
+DocumentName7=Door.SchDoc
+IsEnabled7=1
+SelectionScope7=All
+Order7=16
+IndexEnabled7=0
+IndexStartValue7=1
+Suffix7=
+UniqueIDPath8=\LFICAGCC\7JTMETERG
+DocumentName8=Door.SchDoc
+IsEnabled8=1
+SelectionScope8=All
+Order8=17
+IndexEnabled8=0
+IndexStartValue8=1
+Suffix8=
+UniqueIDPath9=\LFICAGCC\8JTMETERG
+DocumentName9=Door.SchDoc
+IsEnabled9=1
+SelectionScope9=All
+Order9=18
+IndexEnabled9=0
+IndexStartValue9=1
+Suffix9=
+UniqueIDPath10=\LFICAGCC\9JTMETERG
+DocumentName10=Door.SchDoc
+IsEnabled10=1
+SelectionScope10=All
+Order10=19
+IndexEnabled10=0
+IndexStartValue10=1
+Suffix10=
+UniqueIDPath11=\LFICAGCC\10JTMETERG
+DocumentName11=Door.SchDoc
+IsEnabled11=1
+SelectionScope11=All
+Order11=20
+IndexEnabled11=0
+IndexStartValue11=1
+Suffix11=
+UniqueIDPath12=\LFICAGCC\11JTMETERG
+DocumentName12=Door.SchDoc
+IsEnabled12=1
+SelectionScope12=All
+Order12=21
+IndexEnabled12=0
+IndexStartValue12=1
+Suffix12=
+UniqueIDPath13=\LFICAGCC\12JTMETERG
+DocumentName13=Door.SchDoc
+IsEnabled13=1
+SelectionScope13=All
+Order13=22
+IndexEnabled13=0
+IndexStartValue13=1
+Suffix13=
+UniqueIDPath14=\LFICAGCC\13JTMETERG
+DocumentName14=Door.SchDoc
+IsEnabled14=1
+SelectionScope14=All
+Order14=23
+IndexEnabled14=0
+IndexStartValue14=1
+Suffix14=
+UniqueIDPath15=\LFICAGCC\14JTMETERG
+DocumentName15=Door.SchDoc
+IsEnabled15=1
+SelectionScope15=All
+Order15=24
+IndexEnabled15=0
+IndexStartValue15=1
+Suffix15=
+UniqueIDPath16=\LFICAGCC\15JTMETERG
+DocumentName16=Door.SchDoc
+IsEnabled16=1
+SelectionScope16=All
+Order16=25
+IndexEnabled16=0
+IndexStartValue16=1
+Suffix16=
+UniqueIDPath17=\LFICAGCC\16JTMETERG
+DocumentName17=Door.SchDoc
+IsEnabled17=1
+SelectionScope17=All
+Order17=26
+IndexEnabled17=0
+IndexStartValue17=1
+Suffix17=
+UniqueIDPath18=\LFICAGCC\17JTMETERG
+DocumentName18=Door.SchDoc
+IsEnabled18=1
+SelectionScope18=All
+Order18=27
+IndexEnabled18=0
+IndexStartValue18=1
+Suffix18=
+UniqueIDPath19=\LFICAGCC\18JTMETERG
+DocumentName19=Door.SchDoc
+IsEnabled19=1
+SelectionScope19=All
+Order19=28
+IndexEnabled19=0
+IndexStartValue19=1
+Suffix19=
+UniqueIDPath20=\LFICAGCC\19JTMETERG
+DocumentName20=Door.SchDoc
+IsEnabled20=1
+SelectionScope20=All
+Order20=29
+IndexEnabled20=0
+IndexStartValue20=1
+Suffix20=
+UniqueIDPath21=\LFICAGCC\20JTMETERG
+DocumentName21=Door.SchDoc
+IsEnabled21=1
+SelectionScope21=All
+Order21=30
+IndexEnabled21=0
+IndexStartValue21=1
+Suffix21=
+UniqueIDPath22=\LFICAGCC\21JTMETERG
+DocumentName22=Door.SchDoc
+IsEnabled22=1
+SelectionScope22=All
+Order22=31
+IndexEnabled22=0
+IndexStartValue22=1
+Suffix22=
+UniqueIDPath23=\LFICAGCC\22JTMETERG
+DocumentName23=Door.SchDoc
+IsEnabled23=1
+SelectionScope23=All
+Order23=32
+IndexEnabled23=0
+IndexStartValue23=1
+Suffix23=
+UniqueIDPath24=\LFICAGCC\23JTMETERG
+DocumentName24=Door.SchDoc
+IsEnabled24=1
+SelectionScope24=All
+Order24=33
+IndexEnabled24=0
+IndexStartValue24=1
+Suffix24=
+UniqueIDPath25=\LFICAGCC\24JTMETERG
+DocumentName25=Door.SchDoc
+IsEnabled25=1
+SelectionScope25=All
+Order25=34
+IndexEnabled25=0
+IndexStartValue25=1
+Suffix25=
+UniqueIDPath26=\OHAMHNQJ
+DocumentName26=DownLoad.SchDoc
+IsEnabled26=1
+SelectionScope26=All
+Order26=6
+IndexEnabled26=0
+IndexStartValue26=1
+Suffix26=
+UniqueIDPath27=\YTBOJGLV
+DocumentName27=LM2596.SchDoc
+IsEnabled27=1
+SelectionScope27=All
+Order27=7
+IndexEnabled27=0
+IndexStartValue27=1
+Suffix27=
+UniqueIDPath28=\SXHSDIEF
+DocumentName28=SIM900A.SchDoc
+IsEnabled28=1
+SelectionScope28=All
+Order28=8
+IndexEnabled28=0
+IndexStartValue28=1
+Suffix28=
+UniqueIDPath29=\OKOUXFJA
+DocumentName29=TAJ1051T.SchDoc
+IsEnabled29=1
+SelectionScope29=All
+Order29=9
+IndexEnabled29=0
+IndexStartValue29=1
+Suffix29=
+UniqueIDPath30=\SJVKNJFE
+DocumentName30=W5500+HR911105A.SchDoc
+IsEnabled30=1
+SelectionScope30=All
+Order30=10
+IndexEnabled30=0
+IndexStartValue30=1
+Suffix30=
 
 [PrjClassGen]
 CompClassManualEnabled=0
@@ -1105,7 +1391,7 @@ UpdateVariants=1
 PartTypes=0
 
 [Comparison Options]
-ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
+ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=0|UseName=-1|InclAllRules=0
 ComparisonOptions1=Kind=Net Class|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
 ComparisonOptions2=Kind=Component Class|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
 ComparisonOptions3=Kind=Rule|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
