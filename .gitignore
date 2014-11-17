@@ -2,9 +2,18 @@
 ### Include
 !*.doc
 !*.txt
+
 ### Compress
 *.rar
 *.zip
+
+###
+*.Cache
+*.tags*
+tags
+*~
+~$*
+*副本*
 
 ### Common
 *.o
@@ -16,11 +25,13 @@
 *.tmp
 *.log
 *.obj
-*.Cache
-*.tags*
-*~
-~$*
-
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
 ## Build results
 [Dd]ebug		#Debug
 [Rr]elease		#Relese
@@ -28,6 +39,16 @@
 [Bb]in			#Bin
 [Oo]bj			#Obj
 [Oo]ut[Pp]ut	#Output
+
+### STM32
+output
+*.lst
+*.orig
+*.dep
+*.map
+### C#
+
+###Android
 
 ### Altium Designer
 
@@ -89,12 +110,3 @@ CAM for *
 *.si 		#CUPL Simulation Input File
 *.so 		#Digital Waveform File
 ##VHDL
-
-### STM32
-
-/output
-
-*.lst
-*.orig
-*.dep
-*.map
