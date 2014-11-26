@@ -45,10 +45,31 @@ tags
 
 ### STM32
 output
-*.lst
 *.orig
 *.dep
+*.ddk 
+*.edk
+*.lst
+*.lnp
+*.mpf
+*.mpj
+*.obj
+*.omf
+*.plg
+*.rpt
+*.tmp
+*.__i
+*.crf
+*.d 
+*.axf
+*.tra
+*.dep
+*.iex
+*.htm
+*.sct
 *.map
+
+
 ### C#
 
 ###Android
