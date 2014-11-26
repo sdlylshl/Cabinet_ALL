@@ -4,11 +4,12 @@
 !*.txt
 
 #工程文档
--docs
+!+doc
+!+docs
 
 ### Compress
-*.rar
-*.zip
+!*.rar
+!*.zip
 
 ###
 *.Cache
