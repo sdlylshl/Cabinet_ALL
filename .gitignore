@@ -3,6 +3,9 @@
 !*.doc
 !*.txt
 
+#工程文档
+docs
+
 ### Compress
 *.rar
 *.zip
