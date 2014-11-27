@@ -23,16 +23,17 @@ while(1){
 	loopback_tcpc(1);
 Time = time4;
 		printf("Time1 :%x \r\n",Time);	
-Delay_ms(1000);
+//Delay_ms(1000);
 Time = time4;
 		printf("Time2 :%x \r\n",Time);		
 	LED8(ON);LED7(ON);LED6(ON);
 	Time = time4;
 		printf("Time2 :%x \r\n",Time);	
-Delay_ms(1000);
+//Delay_ms(1000);
 	LED8(OFF);LED7(OFF);LED6(OFF);
 printf("%s",str);
-
+	
+PfmBuffer_Next(PfmBuffer_Read());
 }	
 //return 0;
 }

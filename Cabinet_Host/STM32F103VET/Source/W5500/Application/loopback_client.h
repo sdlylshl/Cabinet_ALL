@@ -3,9 +3,9 @@
 
 #include <stdint.h>
 #include "..\Ethernet_Config.h"
-int32_t loopback_tcps(uint8_t sn, uint8_t* buf, uint16_t port);
-int32_t loopback_udps(uint8_t sn, uint8_t* buf, uint16_t port);
-int32_t rcvonly_tcps(uint8_t sn, uint8_t* buf, uint16_t port);
+
+void loopback_tcpc(uint8_t sn);
+int32_t loopback_udpc(uint8_t sn);
 
 /************************/
 /* Select LOOPBACK_MODE */

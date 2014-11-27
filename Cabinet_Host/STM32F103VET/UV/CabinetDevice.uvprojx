@@ -482,6 +482,11 @@
               <FileType>1</FileType>
               <FilePath>..\Source\W5500\Application\loopback_client.c</FilePath>
             </File>
+            <File>
+              <FileName>pfmBuffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\W5500\Application\Buffer\PfmBuffer\pfmBuffer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -650,6 +655,11 @@
               <FileType>1</FileType>
               <FilePath>RTE\Device\STM32F103VE\system_stm32f10x.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f10x_crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_crc.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
@@ -672,6 +682,12 @@
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="CAN" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
+        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
+        <targetInfos>
+          <targetInfo name="CabinetDevice"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="CRC" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
           <targetInfo name="CabinetDevice"/>

@@ -1,8 +1,7 @@
 #ifndef _LOOPBACK_SERVER_H_
 #define _LOOPBACK_SERVER_H_
 
-#include <stdint.h>
-
+#include "..\Ethernet_Config.h"
 int32_t loopback_tcps(uint8_t sn, uint8_t* buf, uint16_t port);
 int32_t loopback_udps(uint8_t sn, uint8_t* buf, uint16_t port);
 int32_t rcvonly_tcps(uint8_t sn, uint8_t* buf, uint16_t port);

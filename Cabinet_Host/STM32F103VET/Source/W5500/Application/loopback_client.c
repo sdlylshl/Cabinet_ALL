@@ -2,13 +2,13 @@
 
 #include "loopback_client.h"
 
-#define tick_second 1000
+#define tick_second 100
 
 uint32_t my_time;
 uint32_t presentTime;
 uint32_t keep_alive_time;
 uint32_t cruise_interval;
-uint32_t net_check_time;
+uint32_t received_len;
 
 
 uint32_t time_return(void)
@@ -17,10 +17,20 @@ uint32_t time_return(void)
 }
 
 // SRAM address range is 0x2000 0000 ~ 0x2000 4FFF (20KB)
-#define TX_RX_MAX_BUF_SIZE	2048
+#define TX_RX_MAX_BUF_SIZE	300
 
 extern uint8_t TX_BUF[TX_RX_MAX_BUF_SIZE]; // TX Buffer for applications
 extern uint8_t RX_BUF[TX_RX_MAX_BUF_SIZE]; // RX Buffer for applications
+
+//1.获取剩余空间大小
+
+//2.获取可写空间大小 （TX_RX_MAX_BUF_SIZE-head )|(tail-head) 较小值 【一次可填充大小】
+
+//3.确保写操作不会造成head 跑到 tail的前面
+
+//4.确保读操作不会造成tail 跑到 head的前面
+
+
 
 
 unsigned char calcfcs(unsigned char *pmsg, unsigned char len)
@@ -33,14 +43,15 @@ unsigned char calcfcs(unsigned char *pmsg, unsigned char len)
 	return result;
 }
 
-uint8_t Dest_IP[4] = {192, 168, 88, 221}; //DST_IP Address 
-uint16_t Dest_PORT = 8081; //DST_IP port
+uint8_t Dest_IP[4] = {192, 168, 88, 94}; //DST_IP Address 
+uint16_t Dest_PORT = 51388; //DST_IP port
 
 #define	MAX_SOCK_NUM		8	/**< Maxmium number of socket */
 //socket状态机
 extern uint8_t ch_status[MAX_SOCK_NUM] ;	/** 0:close, 1:ready, 2:connected 3:init*/
 uint16_t any_port=1000;
-void loopback_tcpc(SOCKET s)
+
+void loopback_tcpc(uint8_t s)
 {
 	uint16_t RSR_len;
 	uint8_t * data_buf = TX_BUF;
@@ -50,6 +61,7 @@ void loopback_tcpc(SOCKET s)
 	uint8_t res = getSn_SR(s);
 	switch (res)
 	{
+		//Socket n的连接状态。在此状态下，可以使用 SEND 或者 RECV 命令进行数据包传输。
 	case SOCK_ESTABLISHED:                 /* if connection is established */
 		//printf("SOCK_ESTABLISHED\n");
 		if(time_return() - presentTime >= (tick_second * 2)) 
@@ -71,15 +83,19 @@ void loopback_tcpc(SOCKET s)
 			 	RSR_len = TX_RX_MAX_BUF_SIZE;   
 			                                                                   
 			 received_len = recv(s, data_buf, RSR_len); 
-			 send(s, data_buf, received_len, (bool)0);
+			 send(s, data_buf, received_len);
 		}
 		#endif
 
+	 tcpc_SendBuff(s);
 		//do_tcp_alive(s, mode);
 		//cruise_io(s, mode);
 		//recv_loop(s, mode);
 
 		break;
+		//4.Socket n 接收到了来自连接对方发来的断开连接请求
+		//若要全部关闭，需要使用 DISCON 命令。
+		//要关闭Socket，需要使用 CLOSE命令。 
 	case SOCK_CLOSE_WAIT:  
 		if(time_return() - presentTime >= (tick_second * 2)) 
 		{  
@@ -97,6 +113,7 @@ void loopback_tcpc(SOCKET s)
 		disconnect(s);
 		ch_status[s] = 0;
 		break;
+		//0. Socket n处于关闭状态，资源被释放
 	case SOCK_CLOSED: 
 		//printf("SOCK_CLOSED\n");
 		if(time_return() - presentTime >= (tick_second * 2)) 
@@ -116,7 +133,7 @@ void loopback_tcpc(SOCKET s)
 			 ch_status[s] = 0;
 		}
 		break;
-		//0x13  SOCK_INIT 该位指示了 Socket n 端口打开并处于 TCP工作模式。
+		//1. 0x13  SOCK_INIT 该位指示了 Socket n 端口打开并处于 TCP工作模式。
 	case SOCK_INIT:     /* if a socket is initiated */
 		//printf("SOCK_INIT\n");
 		if(ch_status[s] == 2)
