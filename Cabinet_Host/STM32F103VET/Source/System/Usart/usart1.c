@@ -12,7 +12,7 @@ static void USART1_GPIO_Config(void)
     //USART1_TX PA9     PB6 
     //USART1_RX PA10     PB7   
 #if   USART1_REMAP  
-    RCC_APB2PeriphClockCmd(|RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO, ENABLE);
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO, ENABLE);
     GPIO_PinRemapConfig(GPIO_Remap_USART1,ENABLE);
 #else
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);

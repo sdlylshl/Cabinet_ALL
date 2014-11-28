@@ -146,7 +146,7 @@
             <UsePdscDebugDescription>1</UsePdscDebugDescription>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>6</TargetSelection>
+          <TargetSelection>11</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -160,7 +160,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>Segger\JL2CM3.dll</Driver>
+            <Driver>STLink\ST-LINKIII-KEIL_SWO.dll</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
@@ -493,6 +493,11 @@
           <GroupName>System</GroupName>
           <Files>
             <File>
+              <FileName>usart1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\System\Usart\usart1.c</FilePath>
+            </File>
+            <File>
               <FileName>DMA.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Source\System\DMA.c</FilePath>
@@ -542,6 +547,16 @@
               <FileType>1</FileType>
               <FilePath>..\Source\System\Timer\timer4.c</FilePath>
             </File>
+            <File>
+              <FileName>spi3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\System\SPI\spi3.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\System\SPI\spi1.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -571,16 +586,6 @@
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Source\GPIO\led.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>USART</GroupName>
-          <Files>
-            <File>
-              <FileName>usart1.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Source\System\Usart\usart1.c</FilePath>
             </File>
           </Files>
         </Group>

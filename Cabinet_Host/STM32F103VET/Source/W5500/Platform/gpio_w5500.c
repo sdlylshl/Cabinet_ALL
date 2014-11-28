@@ -46,37 +46,31 @@ void WIZ_GPIO_Configuration(void)
         GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
         GPIO_Init(WIZ_nRST_PORT, &GPIO_InitStructure);
 	
-        GPIO_InitStructure.GPIO_Pin = WIZ_SCS_PIN;
-        GPIO_InitStructure.GPIO_Mode = WIZ_SCS_MODE;
-        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
-        GPIO_Init(WIZ_SCS_PORT, &GPIO_InitStructure);
-				
-        GPIO_InitStructure.GPIO_Pin = WIZ_SCLK_PIN;
-        GPIO_InitStructure.GPIO_Mode = WIZ_SCLK_MODE;
-        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
-        GPIO_Init(WIZ_SCLK_PORT, &GPIO_InitStructure);	
-				
-	      GPIO_InitStructure.GPIO_Pin = WIZ_MISO_PIN;
-        GPIO_InitStructure.GPIO_Mode = WIZ_MISO_MODE;
-        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
-        GPIO_Init(WIZ_MISO_PORT, &GPIO_InitStructure);	
-				
-				GPIO_InitStructure.GPIO_Pin = WIZ_MOSI_PIN;
-        GPIO_InitStructure.GPIO_Mode = WIZ_MOSI_MODE;
-        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
-        GPIO_Init(WIZ_MOSI_PORT, &GPIO_InitStructure);	
+//        GPIO_InitStructure.GPIO_Pin = SPI1_SCS_PIN;
+//        GPIO_InitStructure.GPIO_Mode = SPI1_SCS_MODE;
+//        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
+//        GPIO_Init(SPI1_SCS_PORT, &GPIO_InitStructure);
+//				
+//        GPIO_InitStructure.GPIO_Pin = WIZ_SCLK_PIN;
+//        GPIO_InitStructure.GPIO_Mode = WIZ_SCLK_MODE;
+//        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
+//        GPIO_Init(WIZ_SCLK_PORT, &GPIO_InitStructure);	
+//				
+//	      GPIO_InitStructure.GPIO_Pin = WIZ_MISO_PIN;
+//        GPIO_InitStructure.GPIO_Mode = WIZ_MISO_MODE;
+//        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
+//        GPIO_Init(WIZ_MISO_PORT, &GPIO_InitStructure);	
+//				
+//				GPIO_InitStructure.GPIO_Pin = WIZ_MOSI_PIN;
+//        GPIO_InitStructure.GPIO_Mode = WIZ_MOSI_MODE;
+//        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
+//        GPIO_Init(WIZ_MOSI_PORT, &GPIO_InitStructure);	
 
 }
 
 
 
-void wizchip_select(void) {
-	WIZ_SCS(0);		//低电平有效
-}
 
-void wizchip_deselect(void) {
-	WIZ_SCS(1);
-}
 
 void wizchip_reset(void) {
 

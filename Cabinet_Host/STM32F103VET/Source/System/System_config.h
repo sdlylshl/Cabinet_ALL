@@ -6,14 +6,18 @@
 //#include ".\Delay\delay.h"
 #include ".\Delay\SysTick.h"
 
+#include ".\SPI\spi1.h"
 #include ".\SPI\spi2.h"
+#include ".\SPI\spi3.h"
+//#include ".\Usart\usart.h"
+#include ".\Usart\usart1.h"
 
 #include ".\Timer\timer1.h"
 #include ".\Timer\timer2.h"
 #include ".\Timer\timer3.h"
 #include ".\Timer\timer4.h"
-//#include ".\Usart\usart.h"
-#include ".\Usart\usart1.h"
+
+
 typedef enum {
   POLLING,
   INTERRUPT,

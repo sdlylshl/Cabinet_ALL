@@ -1,11 +1,12 @@
 #include "config.h"
 char * str = "\r\n This is a USART1_printf demo \r\n";
 int main(){
+
     uint32_t Time = 0;
     //RCC_Config();
     NVIC_Config();
     //DMA_Config();
-    LCD12864P_main();
+    //LCD12864P_main();
     LED_GPIO_Config();
 
     TIM1_Config();

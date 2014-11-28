@@ -19,6 +19,7 @@
 #define USART1_RX_PORT			GPIOB			
 #define USART1_RX_PIN				GPIO_Pin_7				
 #define USART1_RX_MODE			GPIO_Mode_IN_FLOATING	
+
 #else					//default	
 //USART1_REMAP = 0
 //USART1_TX PA9

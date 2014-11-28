@@ -123,13 +123,22 @@ wiz_NetTimeout gWIZNETTIMEOUT ={
 	6000				//< time unit 100us
 };
 
+void wizchip_select(void) {
+	//WIZ_SCS(0);		//低电平有效
+	SPI1_select();
+}
+
+void wizchip_deselect(void) {
+	//WIZ_SCS(1);
+	SPI1_deselect();
+}
 
 void wizchip_write_byte(uint8_t wb) {
-	SPI2_SendByte(wb);
+	SPI1_SendByte(wb);
 }
 
 uint8_t wizchip_read_byte() {
-	return SPI2_ReceiveByte();
+	return SPI1_ReceiveByte();
 }
 
 
@@ -173,7 +182,7 @@ int Ethernet_Init(void)
 			
 			
 	//RCC_Config();
-	SPI2_Config();
+	SPI1_Config();
 	WIZ_GPIO_Configuration();			
 	WIZ_SPI_Configuration();
 	//WIZ_DMA_Configuration();
