@@ -10,6 +10,13 @@ extern uint8_t RX_BUF[0xFF]; // RX Buffer for applications
 uint8_t recv_write;
 uint8_t recv_read;
 
+typedef struct cmd{
+	uint8_t usable;
+	uint8_t len;
+	uint8_t data[128];
+}cmd_t;
+
+cmd_t datcmd_t[10];
 void PfmBuffer_Init(void){
     recv_write = 0;
     recv_read = 0;
@@ -116,6 +123,7 @@ int8_t CRC_check(uint8_t position,uint8_t len){
 void ParseInstruction()
 {
     uint8_t len_tmp;
+		uint8_t i;
     // SendCMD(recv_write);
     // SendCMD(recv_read);
     //包头检测 若接收到的数据长度小于最小心跳包长度 则不再检测包头
@@ -136,18 +144,29 @@ void ParseInstruction()
 						//单条指令最大长度
             if (len_tmp < MAX_INSTRUCTION_LEN)
             {
-                if (PfmBuffer_Read() > len_tmp + 8)
+								//接收到完整指令 recv_read+3 代表len 位置  len1+sn2+crc4+endl =8字节 endl 可忽略
+                if (PfmBuffer_Read() >= len_tmp + 8)
                 {
-											//接收到完整指令 recv_read+3 代表len 位置  len1+sn2+crc4+endl =8字节 endl 可忽略
+											
 										 
 										//CRC校验 包含包头0xE0 0x55 0xAA +len + data +crc
 										if(CRC_check(recv_read,len_tmp+4)){
 											//memcpy();
+											//1.获取指令表
+											datcmd_t[0].len = len_tmp;
+											//2.数据复制
+											for(i=0;i<len_tmp;i++){
+												datcmd_t[0].data[i]= RX_BUF[recv_read+i+4];
+											}
+											datcmd_t[0].usable = 1;
 										}
 									//移到下一条指令	
-									PfmBuffer_Next(len_tmp);
+									PfmBuffer_Next(len_tmp+8);
 																				
-                }
+                }else{
+									//未接收到完整数据
+									break;
+								}
             }else{
 							recv_read++;
 						}
