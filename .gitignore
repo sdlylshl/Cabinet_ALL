@@ -20,8 +20,8 @@ tags
 *副本*
 *log*
 ### Common
-
 *.o
+*.d
 *.a
 *.db
 *.htm

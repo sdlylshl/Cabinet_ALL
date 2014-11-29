@@ -557,6 +557,11 @@
               <FileType>1</FileType>
               <FilePath>..\Source\System\SPI\spi1.c</FilePath>
             </File>
+            <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\System\CAN\can.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

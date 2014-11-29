@@ -15,7 +15,7 @@
 															RCC_APB2Periph_AFIO)
 															
 															
-#if 0		//Cabinet Device SPI1∏¥”√|SPI3
+#if 1		//Cabinet Device SPI1∏¥”√|SPI3
 
 #define WIZ_RDY_PORT				GPIOB
 #define WIZ_RDY_PIN					GPIO_Pin_0
@@ -26,7 +26,7 @@
 #define WIZ_nRST_MODE				GPIO_Mode_Out_PP
 #endif
 
-#if 1		//Cabinet Host SPI1
+#if 0		//Cabinet Host SPI1
 
 #define WIZ_RDY_PORT				GPIOA
 #define WIZ_RDY_PIN					GPIO_Pin_1
