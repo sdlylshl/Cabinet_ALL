@@ -43,7 +43,7 @@ unsigned char calcfcs(unsigned char *pmsg, unsigned char len)
 	return result;
 }
 
-uint8_t Dest_IP[4] = {192, 168, 88, 48}; //DST_IP Address 
+uint8_t Dest_IP[4] = {192, 168, 88, 81}; //DST_IP Address 
 uint16_t Dest_PORT = 1388; //DST_IP port
 
 #define	MAX_SOCK_NUM		8	/**< Maxmium number of socket */
