@@ -17,12 +17,8 @@ int main(){
 	for(i=0;i<25;i++){
 	LOCKn_ONOFF(i,1);	
 	}
-    TIM1_Config();
-    TIM2_Config();
-    TIM3_Config();
+
     TIM4_Config();
-    TIM2_Start();
-    TIM3_Start();
     TIM4_Start();
 
     USART1_Config();
@@ -32,10 +28,10 @@ int main(){
 
 
     while(1){
-				if(isSENSOR2LOW()){
-						LOCKn_ONOFF(2,0);
+				if(isSENSOR15LOW()){
+						LOCKn_ONOFF(15,0);
 				}else{
-				LOCKn_ONOFF(2,1);
+				LOCKn_ONOFF(15,1);
 				}
         //loopback_tcpc(1);
         Time = time4;
