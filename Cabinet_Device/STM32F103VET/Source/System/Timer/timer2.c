@@ -55,6 +55,7 @@ void TIM2_Config(void)
 }
 void TIM2_Start(void){
 		time2=0;
+		TIM2_Config();
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 , ENABLE);
 		TIM_Cmd(TIM2, ENABLE);
 }

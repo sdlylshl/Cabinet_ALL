@@ -3,7 +3,7 @@
 
 #include "stm32f10x.h"
 //#define SPI1_DMA 
-#define SPI1_REMAP 1
+#define SPI1_REMAP 0
 #if SPI1_REMAP
   // SPI1 PA 4 5 6 7	
 #define SPI1_SCS_PORT				GPIOA

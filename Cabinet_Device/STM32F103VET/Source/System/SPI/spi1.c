@@ -49,11 +49,11 @@ void SPI1_Config(void)
 	  SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
 	  SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
 	  SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
-	  SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;
-	  SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;
+	  SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;	//空闲为低
+	  SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;//第一个跳变沿采样
 	  SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;
 	  SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_4;
-	  SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
+	  SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;	//高位在前
 	  SPI_InitStructure.SPI_CRCPolynomial = 7;
 
 	  SPI_Init(SPI1, &SPI_InitStructure);
@@ -69,22 +69,25 @@ void SPI1_Config(void)
 
 uint8_t SPI1_SendByte(uint8_t byte)
 {
+		uint8_t i = 0;
+		//等待发送信号寄存器为非空，然后发送一个字节到spi总线上 
 	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET);
          
 	  SPI_I2S_SendData(SPI1, byte);
-          
-	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET);
+    //等待接收信号寄存器为非空，然后从spi总线上接收一个字节      
+	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET){if(i++>0xF0)break;}
           
 	  return SPI_I2S_ReceiveData(SPI1);
 }
 
 uint8_t SPI1_ReceiveByte(void)
-{
+{		uint8_t i = 0;
+		//时序同发生字节一样，只是不返回读取的字节
 	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET);
          
 	  SPI_I2S_SendData(SPI1, 0);
-          
-	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET);
+    //等待接收信号寄存器为非空，然后从spi总线上接收一个字节    
+	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET){if(i++>0xF0)break;}
           
 	  return SPI_I2S_ReceiveData(SPI1);
 }

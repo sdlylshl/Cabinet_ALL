@@ -68,23 +68,23 @@ void SPI1_Config(void)
 
 
 uint8_t SPI1_SendByte(uint8_t byte)
-{
+{		uint8_t i = 0;
 	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET);
          
 	  SPI_I2S_SendData(SPI1, byte);
           
-	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET);
+	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET){if(i++>0xF0)break;}
           
 	  return SPI_I2S_ReceiveData(SPI1);
 }
 
 uint8_t SPI1_ReceiveByte(void)
-{
+{	uint8_t i = 0;
 	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET);
          
 	  SPI_I2S_SendData(SPI1, 0);
           
-	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET);
+	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET){if(i++>0xF0)break;}
           
 	  return SPI_I2S_ReceiveData(SPI1);
 }

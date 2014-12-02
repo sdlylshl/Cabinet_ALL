@@ -17,23 +17,25 @@ int main(){
 	for(i=0;i<25;i++){
 	LOCKn_ONOFF(i,1);	
 	}
-
+		TIM2_Start();
     TIM4_Config();
     TIM4_Start();
 
     USART1_Config();
-    //Ethernet_Init();	
+    Ethernet_Init();	
     //Ethernet_main();
     printf("%slist",str);
 
 
     while(1){
+			
 				if(isSENSOR15LOW()){
 						LOCKn_ONOFF(15,0);
 				}else{
 				LOCKn_ONOFF(15,1);
 				}
-        //loopback_tcpc(1);
+				
+        loopback_tcpc(1);
         Time = time4;
         printf("Time1 :%x \r\n",Time);	
         //Delay_ms(1000);
@@ -45,7 +47,7 @@ int main(){
         //Delay_ms(1000);
         //LED8(OFF);LED7(OFF);LED6(OFF);
         printf("%s",str);
-        //ParseInstruction();	
+        ParseInstruction();	
         //PfmBuffer_Next(PfmBuffer_Read());
     }	
     //return 0;
