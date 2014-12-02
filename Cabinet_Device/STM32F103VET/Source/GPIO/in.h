@@ -2,7 +2,7 @@
 #define	__IN_H
 
 #include "stm32f10x.h"
-
+#include "../System/System_config.h"
 /* the macro definition to trigger the led on or off
  * 1 - off
  - 0 - on
@@ -158,6 +158,6 @@
 #define    SENSOR24(x)   x ? GPIO_SetBits(SENSOR24_PORT,SENSOR24_PIN):  GPIO_ResetBits(SENSOR24_PORT,SENSOR24_PIN)
 void SENSOR_GPIO_Config(void);
 void SENSORn_ONOFF(uint8_t n,uint8_t onoff);	 									
-uint8_t isSENSOR2LOW(void);	
-uint8_t isSENSOR15LOW(void);	
+
+uint8_t GetSensorStatus(uint8_t ch);
 #endif /* __SENSOR_H */

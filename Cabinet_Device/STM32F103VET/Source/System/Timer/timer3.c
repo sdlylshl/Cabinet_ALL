@@ -38,6 +38,7 @@ void TIM3_Config(void)
 
 void TIM3_Start(void){
 		time3=0;
+		TIM3_Config();
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3 , ENABLE);
 		TIM_Cmd(TIM3, ENABLE);
 }

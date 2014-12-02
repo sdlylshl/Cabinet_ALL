@@ -201,14 +201,112 @@ void SENSOR_GPIO_Config(void)
 	#endif
 }
 
-uint8_t isSENSOR2LOW(){
-		return (!GPIO_ReadInputDataBit(SENSOR2_PORT, SENSOR2_PIN));
-	
 
-}
-uint8_t isSENSOR15LOW(){
-		return (!GPIO_ReadInputDataBit(SENSOR15_PORT, SENSOR15_PIN));
-	
+uint32_t SENSOR_STATUS = 0;
+uint8_t GetSensorStatus(uint8_t ch){
+	uint8_t st =0; 
+    switch (ch){
+        case 1:
+            st = GPIO_ReadInputDataBit(SENSOR1_PORT, SENSOR1_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<0)))|(st<<0);
+			break;
+        case 2:
+            st = GPIO_ReadInputDataBit(SENSOR2_PORT, SENSOR2_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<1)))|(st<<1);
+			break;
+        case 3:
+            st = GPIO_ReadInputDataBit(SENSOR3_PORT, SENSOR3_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<2)))|(st<<2);
+			break;
+        case 4:
+            st = GPIO_ReadInputDataBit(SENSOR4_PORT, SENSOR4_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<3)))|(st<<3);
+			break;
+        case 5:
+            st = GPIO_ReadInputDataBit(SENSOR5_PORT, SENSOR5_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<4)))|(st<<4);
+			break;
+        case 6:
+            st = GPIO_ReadInputDataBit(SENSOR6_PORT, SENSOR6_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<5)))|(st<<5);
+			break;
+        case 7:
+            st = GPIO_ReadInputDataBit(SENSOR7_PORT, SENSOR7_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<6)))|(st<<6);
+			break;
+        case 8:
+            st = GPIO_ReadInputDataBit(SENSOR8_PORT, SENSOR8_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<7)))|(st<<7);
+			break;
+        case 9:
+            st = GPIO_ReadInputDataBit(SENSOR9_PORT, SENSOR9_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<8)))|(st<<8);
+			break;
+        case 10:
+            st = GPIO_ReadInputDataBit(SENSOR10_PORT, SENSOR10_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<9)))|(st<<9);
+			break;
+        case 11:
+            st = GPIO_ReadInputDataBit(SENSOR11_PORT, SENSOR11_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<10)))|(st<<10);
+			break;
+        case 12:
+            st = GPIO_ReadInputDataBit(SENSOR12_PORT, SENSOR12_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<11)))|(st<<11);
+			break;
+        case 13:
+            st = GPIO_ReadInputDataBit(SENSOR13_PORT, SENSOR13_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<12)))|(st<<12);
+			break;
+        case 14:
+            st = GPIO_ReadInputDataBit(SENSOR14_PORT, SENSOR14_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<13)))|(st<<13);
+			break;
+        case 15:
+            st = GPIO_ReadInputDataBit(SENSOR15_PORT, SENSOR15_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<14)))|(st<<14);
+			break;
+        case 16:
+            st = GPIO_ReadInputDataBit(SENSOR16_PORT, SENSOR16_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<15)))|(st<<15);
+			break;
+        case 17:
+            st = GPIO_ReadInputDataBit(SENSOR17_PORT, SENSOR17_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<16)))|(st<<16);
+			break;
+        case 18:
+            st = GPIO_ReadInputDataBit(SENSOR18_PORT, SENSOR18_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<17)))|(st<<17);
+			break;
+        case 19:
+            st = GPIO_ReadInputDataBit(SENSOR19_PORT, SENSOR19_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<18)))|(st<<18);
+			break;
+        case 20:
+            st = GPIO_ReadInputDataBit(SENSOR20_PORT, SENSOR20_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<19)))|(st<<19);
+			break;
+        case 21:
+            st = GPIO_ReadInputDataBit(SENSOR21_PORT, SENSOR21_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<20)))|(st<<20);
+			break;
+        case 22:
+            st = GPIO_ReadInputDataBit(SENSOR22_PORT, SENSOR22_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<21)))|(st<<21);
+			break;
+        case 23:
+            st = GPIO_ReadInputDataBit(SENSOR23_PORT, SENSOR23_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<22)))|(st<<22);
+			break;
+        case 24:
+            st = GPIO_ReadInputDataBit(SENSOR24_PORT, SENSOR24_PIN);
+			SENSOR_STATUS = (SENSOR_STATUS& (~(1<<23)))|(st<<23);
+			break;
+        default:
+            break;
 
+    }
+		return st;
 }
+
 /******************* (C) COPYRIGHT 2012 WildFire Team *****END OF FILE************/

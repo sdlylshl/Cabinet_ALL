@@ -16,11 +16,11 @@ uint32_t time_return(void)
   return TIM4_GetCurrentTime();
 }
 
-// SRAM address range is 0x2000 0000 ~ 0x2000 4FFF (20KB)
-#define TX_RX_MAX_BUF_SIZE	300
 
-extern uint8_t TX_BUF[TX_RX_MAX_BUF_SIZE]; // TX Buffer for applications
-extern uint8_t RX_BUF[TX_RX_MAX_BUF_SIZE]; // RX Buffer for applications
+//#define TX_RX_MAX_BUF_SIZE	300
+
+extern uint8_t TX_BUF[]; // TX Buffer for applications
+extern uint8_t RX_BUF[]; // RX Buffer for applications
 
 //1.获取剩余空间大小
 
@@ -43,8 +43,8 @@ unsigned char calcfcs(unsigned char *pmsg, unsigned char len)
 	return result;
 }
 
-uint8_t Dest_IP[4] = {192, 168, 88, 58}; //DST_IP Address 
-uint16_t Dest_PORT = 8081; //DST_IP port
+extern uint8_t Dest_IP[4]; //DST_IP Address 
+extern uint16_t Dest_PORT; //DST_IP port
 
 #define	MAX_SOCK_NUM		8	/**< Maxmium number of socket */
 //socket状态机

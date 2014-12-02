@@ -2,7 +2,7 @@
 
 #include "pfmBuffer.h"
 //缓冲区长度
-#define TX_RX_MAX_BUF_SIZE	255
+//#define TX_RX_MAX_BUF_SIZE	255
 //单条指令最大长度
 #define MAX_INSTRUCTION_LEN 128
 extern uint8_t RX_BUF[0xFF]; // RX Buffer for applications

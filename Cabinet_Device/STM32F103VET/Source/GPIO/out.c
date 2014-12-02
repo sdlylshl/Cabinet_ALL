@@ -290,4 +290,38 @@ void LOCKn_ONOFF(uint8_t n,uint8_t onoff){
 	}
 
 }
+
+//1.开启时间ms
+uint32_t LOCK_OPEN_TIME = 500;
+uint32_t lock_base_open;
+//2.开关间隔ms
+uint32_t LOCK_INTERVALS_TIME = 500;
+uint32_t lock_base_intervals;
+
+uint32_t GetCurrentTime(){
+   return TIM4_GetCurrentTime();
+}
+uint32_t GetDistanceTime(uint32_t prev){
+    return TIM4_GetDistanceTime(prev);
+}
+
+int8_t Locker_open(uint8_t ch){
+    //1.等待间隔是否到达
+    //1.开锁
+    //2.检测锁状态
+    //3.关锁
+    while(GetDistanceTime(lock_base_intervals)<LOCK_INTERVALS_TIME);
+    lock_base_open = GetCurrentTime();
+    LOCKn_ONOFF(ch,1);
+    Delay_ms(10);
+    //采集状态 上报
+    GetSensorStatus(1);
+    while(GetDistanceTime(lock_base_open) < LOCK_OPEN_TIME);
+    LOCKn_ONOFF(ch,0);
+    lock_base_intervals = GetCurrentTime();
+    //返回状态
+    return (-1);
+
+
+}
 /******************* (C) COPYRIGHT 2012 WildFire Team *****END OF FILE************/

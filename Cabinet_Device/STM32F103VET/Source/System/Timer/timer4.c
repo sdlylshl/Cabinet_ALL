@@ -36,6 +36,7 @@ void TIM4_Config(void)
 
 void TIM4_Start(void){
 		time4=0;
+		TIM4_Config();
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4 , ENABLE);
 		TIM_Cmd(TIM4, ENABLE);
 }

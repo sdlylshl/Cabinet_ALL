@@ -61,10 +61,7 @@ typedef struct _CONFIG_TYPE_DEF
 //#define __GNUC__
 
 #define	MAX_SOCK_NUM		_WIZCHIP_SOCK_NUM_
-// SRAM address range is 0x2000 0000 ~ 0x2000 4FFF (20KB)
-#define TX_RX_MAX_BUF_SIZE	2048
-//#define TX_BUF	0x20004000
-//#define RX_BUF	(TX_BUF+TX_RX_MAX_BUF_SIZE)
+
 
 //CONFIG_MSG Config_Msg;
 //CHCONFIG_TYPE_DEF Chconfig_Type_Def; 
@@ -83,11 +80,15 @@ uint8_t rxsize[MAX_SOCK_NUM] = {2,2,2,2,2,2,2,2};
 
 //FOR TCP Client
 //Configuration Network Information of TEST PC
-//uint8_t Dest_IP[4] = {192, 168, 88, 221}; //DST_IP Address 
-//uint16_t Dest_PORT = 8081; //DST_IP port
+uint8_t Dest_IP[4] = {192, 168, 88, 58}; //DST_IP Address 
+uint16_t Dest_PORT = 8081; //DST_IP port
 
 uint8_t ch_status[MAX_SOCK_NUM] = { 0, };	/** 0:close, 1:ready, 2:connected 3:init*/
 
+// SRAM address range is 0x2000 0000 ~ 0x2000 4FFF (20KB)
+//#define TX_RX_MAX_BUF_SIZE	2048
+//#define TX_BUF	0x20004000
+//#define RX_BUF	(TX_BUF+TX_RX_MAX_BUF_SIZE)
 uint8_t TX_BUF[TX_RX_MAX_BUF_SIZE]; // TX Buffer for applications
 uint8_t RX_BUF[TX_RX_MAX_BUF_SIZE]; // RX Buffer for applications
 
@@ -233,6 +234,8 @@ int Ethernet_Init(void)
 	do {
 		if (ctlwizchip(CW_GET_PHYLINK, (void*) &tmp) == -1)
 			printf("Unknown PHY Link status.\r\n");
+		if(TIM4_GetCurrentTime()>0xFFFFFF)
+			return -1;
 	} while (tmp == PHY_LINK_OFF);
 
 	printf("W5500 Demo on STM32F401RE Cortex M0\r\n");

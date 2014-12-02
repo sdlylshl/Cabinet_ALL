@@ -18,8 +18,7 @@ int main(){
 	LOCKn_ONOFF(i,1);	
 	}
 		TIM2_Start();
-    TIM4_Config();
-    TIM4_Start();
+    TIM4_Start();//用来做网络延时计时使用
 
     USART1_Config();
     Ethernet_Init();	
@@ -28,14 +27,16 @@ int main(){
 
 
     while(1){
-			
-				if(isSENSOR15LOW()){
-						LOCKn_ONOFF(15,0);
+				for(i=0;i<25;i++){
+				if(GetSensorStatus(i)){
+						LOCKn_ONOFF(i,0);
 				}else{
-				LOCKn_ONOFF(15,1);
+				LOCKn_ONOFF(i,1);
 				}
+				}
+
 				
-        loopback_tcpc(1);
+        //loopback_tcpc(1);
         Time = time4;
         printf("Time1 :%x \r\n",Time);	
         //Delay_ms(1000);
@@ -47,7 +48,7 @@ int main(){
         //Delay_ms(1000);
         //LED8(OFF);LED7(OFF);LED6(OFF);
         printf("%s",str);
-        ParseInstruction();	
+       // ParseInstruction();	
         //PfmBuffer_Next(PfmBuffer_Read());
     }	
     //return 0;
