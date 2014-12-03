@@ -43,7 +43,7 @@ unsigned char calcfcs(unsigned char *pmsg, unsigned char len)
 	return result;
 }
 
-extern uint8_t Dest_IP[4]; //DST_IP Address 
+extern uint8_t Dest_IP[4]; //DST_IP Address
 extern uint16_t Dest_PORT; //DST_IP port
 
 #define	MAX_SOCK_NUM		8	/**< Maxmium number of socket */
@@ -56,7 +56,7 @@ void loopback_tcpc(uint8_t s)
 	uint16_t RSR_len;
 	uint8_t * data_buf = TX_BUF;
 
-	
+
 
 	uint8_t res = getSn_SR(s);
 	switch (res)
@@ -64,8 +64,8 @@ void loopback_tcpc(uint8_t s)
 		//Socket n的连接状态。在此状态下，可以使用 SEND 或者 RECV 命令进行数据包传输。
 	case SOCK_ESTABLISHED:                 /* if connection is established */
 		//printf("SOCK_ESTABLISHED\n");
-		if(time_return() - presentTime >= (tick_second * 2)) 
-		{  
+		if(time_return() - presentTime >= (tick_second * 2))
+		{
 			presentTime = time_return();
 			//printf("SOCK_ESTABLISHED\n");
 		}
@@ -76,13 +76,13 @@ void loopback_tcpc(uint8_t s)
 		}
 
 		#if 0
-		if ((RSR_len = getSn_RX_RSR(s)) > 0)         
+		if ((RSR_len = getSn_RX_RSR(s)) > 0)
 		{
 			printf("RSR_len: 0x%x\n", RSR_len);
-			 if (RSR_len > TX_RX_MAX_BUF_SIZE) 
-			 	RSR_len = TX_RX_MAX_BUF_SIZE;   
-			                                                                   
-			 received_len = recv(s, data_buf, RSR_len); 
+			 if (RSR_len > TX_RX_MAX_BUF_SIZE)
+			 	RSR_len = TX_RX_MAX_BUF_SIZE;
+
+			 received_len = recv(s, data_buf, RSR_len);
 			 send(s, data_buf, received_len);
 		}
 		#endif
@@ -95,10 +95,10 @@ void loopback_tcpc(uint8_t s)
 		break;
 		//4.Socket n 接收到了来自连接对方发来的断开连接请求
 		//若要全部关闭，需要使用 DISCON 命令。
-		//要关闭Socket，需要使用 CLOSE命令。 
-	case SOCK_CLOSE_WAIT:  
-		if(time_return() - presentTime >= (tick_second * 2)) 
-		{  
+		//要关闭Socket，需要使用 CLOSE命令。
+	case SOCK_CLOSE_WAIT:
+		if(time_return() - presentTime >= (tick_second * 2))
+		{
 			presentTime = time_return();
 			printf("SOCK_CLOSE_WAIT\n");
 		}
@@ -114,10 +114,10 @@ void loopback_tcpc(uint8_t s)
 		ch_status[s] = 0;
 		break;
 		//0. Socket n处于关闭状态，资源被释放
-	case SOCK_CLOSED: 
+	case SOCK_CLOSED:
 		//printf("SOCK_CLOSED\n");
-		if(time_return() - presentTime >= (tick_second * 2)) 
-		{  
+		if(time_return() - presentTime >= (tick_second * 2))
+		{
 			presentTime = time_return();
 			printf("SOCK_CLOSED\n");
 		}
@@ -138,16 +138,16 @@ void loopback_tcpc(uint8_t s)
 		//printf("SOCK_INIT\n");
 		if(ch_status[s] == 2)
 			ch_status[s] = 4;
-		if(time_return() - presentTime >= (tick_second * 2)) 
-		{  
+		if(time_return() - presentTime >= (tick_second * 2))
+		{
 			connect(s, Dest_IP, Dest_PORT);
 			presentTime = time_return();
 			printf("SOCK_INIT\n");
 		}
 		break;
 	default:
-		if(time_return() - presentTime >= (tick_second * 2)) 
-		{  
+		if(time_return() - presentTime >= (tick_second * 2))
+		{
 			presentTime = time_return();
 			printf("default\n");
 		}

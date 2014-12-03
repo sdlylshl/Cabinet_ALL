@@ -158,5 +158,7 @@
 #define    LOCK23(x)   x ? GPIO_SetBits(LOCK23_PORT,LOCK23_PIN):  GPIO_ResetBits(LOCK23_PORT,LOCK23_PIN)
 #define    LOCK24(x)   x ? GPIO_SetBits(LOCK24_PORT,LOCK24_PIN):  GPIO_ResetBits(LOCK24_PORT,LOCK24_PIN)
 void LOCK_GPIO_Config(void);
-void LOCKn_ONOFF(uint8_t n,uint8_t onoff);					
+void LOCKn_ONOFF(uint8_t n,uint8_t onoff);	
+int8_t Locker_open(uint8_t ch);
+
 #endif /* __LOCK_H */

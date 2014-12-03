@@ -292,7 +292,7 @@ void LOCKn_ONOFF(uint8_t n,uint8_t onoff){
 }
 
 //1.开启时间ms
-uint32_t LOCK_OPEN_TIME = 500;
+uint32_t LOCK_OPEN_TIME = 50;
 uint32_t lock_base_open;
 //2.开关间隔ms
 uint32_t LOCK_INTERVALS_TIME = 500;
