@@ -3,7 +3,9 @@
 
 #include "stm32f10x.h"
 //#define SPI1_DMA
+#if CABINET_DEVICE
 #define SPI1_REMAP 1
+#endif
 #if SPI1_REMAP
   // SPI1 PA 4 5 6 7
 #define SPI1_SCS_PORT				GPIOA
@@ -40,6 +42,7 @@
 #define SPI1_MOSI_PORT			GPIOA
 #define SPI1_MOSI_PIN				GPIO_Pin_7
 #define SPI1_MOSI_MODE			GPIO_Mode_AF_PP
+
 #endif
 
 

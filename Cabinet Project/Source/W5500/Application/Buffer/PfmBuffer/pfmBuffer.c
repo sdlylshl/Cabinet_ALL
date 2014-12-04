@@ -85,17 +85,6 @@ uint8_t tcpc_RevcDatToBuff(uint8_t sn){
     return 0;
 }
 
-void CRC_Enable(void)
-{
-    /* Enable CRC clock */
-    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC, ENABLE);
-}
-
-void CRC_Disable(void){
-    /* Disable CRC clock */
-    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC, DISABLE);
-
-}
 int8_t CRC_check(uint8_t position,uint8_t len){
     uint32_t CRCvalue;
     uint32_t CRCrecv;

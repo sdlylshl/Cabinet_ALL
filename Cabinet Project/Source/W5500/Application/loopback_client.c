@@ -85,7 +85,7 @@ void loopback_tcpc(uint8_t s)
 			send(s, data_buf, received_len);
 		}
 #endif
-		
+		//接收数据
 		tcpc_RevcDatToBuff(s);
 		//do_tcp_alive(s, mode);
 		//cruise_io(s, mode);

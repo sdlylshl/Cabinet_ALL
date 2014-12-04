@@ -21,21 +21,18 @@ int CRC_test(void)
 {
 	uint8_t i = 0;
 
-	/* USART1 config 115200 8-N-1 */
-	USART1_Config();
-
 	/* 使能CRC时钟 */
 	CRC_Enable();
 
-	printf("\r\n 这是一个 CRC(循环冗余校验)实验 \r\n");
+	//printf("\r\n 这是一个 CRC(循环冗余校验)实验 \r\n");
 
 	/* Compute the CRC of "DataBuffer" */
-	for(i=0; i<BUFFER_SIZE; i++ )
+	for(i=0; i<CRC_BUFFER_SIZE; i++ )
 	{
-		CRCValue = CRC_CalcBlockCRC((uint32_t *)DataBuffer, BUFFER_SIZE);
-		printf("\r\n32-bit CRC 校验码为:0X%X\r\n", CRCValue);
+		CRCValue = CRC_CalcBlockCRC((uint32_t *)DataBuffer, CRC_BUFFER_SIZE);
+		//printf("\r\n32-bit CRC 校验码为:0X%X\r\n", CRCValue);
 	}
-	printf("\r\nCRC(循环冗余校验)测试成功\r\n");
+	//printf("\r\nCRC(循环冗余校验)测试成功\r\n");
 
 	for(;;)
 	{
@@ -50,6 +47,11 @@ int CRC_test(void)
  * 输出  ：无
  * 调用  : 外部调用
  */
+void CRC_Config(void)
+{
+	/* Enable CRC clock */
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC, ENABLE);
+}
 void CRC_Enable(void)
 {
 	/* Enable CRC clock */

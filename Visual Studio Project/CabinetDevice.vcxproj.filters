@@ -28,12 +28,6 @@
     <Filter Include="源文件\LED">
       <UniqueIdentifier>{47134109-4b58-48e9-9f11-9c5a28bc09fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\::CMSIS">
-      <UniqueIdentifier>{ddd3b98c-a951-4513-8b31-3323662ff17b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\::Device">
-      <UniqueIdentifier>{7b281cde-6b3a-423e-b58e-8db9e6f6b0d4}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\Retarget.c">
@@ -135,50 +129,11 @@
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\GPIO\out.c">
       <Filter>源文件\LED</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\misc.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_can.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_gpio.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_rcc.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_spi.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_usart.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_wwdg.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_dma.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_tim.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Cabinet_Device\STM32F103VET\UV\RTE\Device\STM32F103VE\system_stm32f10x.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_crc.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_bkp.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_pwr.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_rtc.c">
-      <Filter>源文件\::Device</Filter>
-    </ClCompile>
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\W5500\Application\Application.c">
       <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Cabinet Project\Source\System\CRC\crc.c">
+      <Filter>源文件\System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -187,15 +142,6 @@
     </None>
     <None Include="..\Cabinet_Device\STM32F103VET\Source\LCD12864\LCD12864P\LCD12864P_main.C">
       <Filter>源文件\LCD12864</Filter>
-    </None>
-    <None Include="..\Cabinet_Device\STM32F103VET\UV\RTE\Device\STM32F103VE\RTE_Device.h">
-      <Filter>源文件\::Device</Filter>
-    </None>
-    <None Include="..\Cabinet_Device\STM32F103VET\UV\RTE\Device\STM32F103VE\startup_stm32f10x_hd.s">
-      <Filter>源文件\::Device</Filter>
-    </None>
-    <None Include="..\Cabinet_Device\STM32F103VET\UV\RTE\Device\STM32F103VE\stm32f10x_conf.h">
-      <Filter>源文件\::Device</Filter>
     </None>
     <None Include="Readme.txt">
       <Filter>项目说明</Filter>

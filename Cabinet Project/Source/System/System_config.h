@@ -1,12 +1,18 @@
 #ifndef _SYSTEM_CONFIG_H_
 #define _SYSTEM_CONFIG_H_
 
+// 子项目引用
+// #include "..\System_config.h"
+
+
 #include "..\config.h"
 
 //#include "stm32f10x.h"
 #include ".\Malloc\malloc.h"
 //#include ".\Delay\delay.h"
 #include ".\Delay\SysTick.h"
+
+#include ".\CRC\crc.h"
 
 #ifdef CABINET_DEVICE 
 #include ".\GPIO\in.h"

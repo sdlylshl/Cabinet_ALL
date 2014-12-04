@@ -1,10 +1,7 @@
 #ifndef __CRC_H
 #define	__CRC_H
 
-#include "stm32f10x.h"
-
-#define CRC_Config CRC_Enable
-#define CRC_Init CRC_Enable
+#include "..\System_config.h"
 
 #define CRC_BUFFER_SIZE    114
 
@@ -33,5 +30,8 @@ static const uint32_t DataBuffer[CRC_BUFFER_SIZE] =
 };
 
 void CRC_Config(void);
+
+void CRC_Enable(void);
+void CRC_Disable(void);
 
 #endif /* __CRC_H */

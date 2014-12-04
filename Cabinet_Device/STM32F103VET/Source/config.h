@@ -3,7 +3,7 @@
 //使用StdPeriph_Driver库
 //#define USE_STDPERIPH_DRIVER 1
 
-#define CABINET_DEVICE 1
+#define CABINET_DEVICE 0
 //#define CABINET_HOST 1
 
 //#include "config.h"

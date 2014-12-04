@@ -32,12 +32,10 @@
   <ItemGroup>
     <None Include="..\Cabinet_Device\STM32F103VET\Source\LCD12864\LCD12864P\LCD12864P.C" />
     <None Include="..\Cabinet_Device\STM32F103VET\Source\LCD12864\LCD12864P\LCD12864P_main.C" />
-    <None Include="..\Cabinet_Device\STM32F103VET\UV\RTE\Device\STM32F103VE\RTE_Device.h" />
-    <None Include="..\Cabinet_Device\STM32F103VET\UV\RTE\Device\STM32F103VE\startup_stm32f10x_hd.s" />
-    <None Include="..\Cabinet_Device\STM32F103VET\UV\RTE\Device\STM32F103VE\stm32f10x_conf.h" />
     <None Include="Readme.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Cabinet Project\Source\System\CRC\crc.c" />
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\Retarget.c" />
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\stm32f10x_it.c" />
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\Main.c" />
@@ -72,20 +70,6 @@
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\GPIO\led.c" />
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\GPIO\in.c" />
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\GPIO\out.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\misc.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_can.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_gpio.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_rcc.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_spi.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_usart.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_wwdg.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_dma.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_tim.c" />
-    <ClCompile Include="..\Cabinet_Device\STM32F103VET\UV\RTE\Device\STM32F103VE\system_stm32f10x.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_crc.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_bkp.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_pwr.c" />
-    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_rtc.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
