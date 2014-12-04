@@ -2,43 +2,43 @@
 #define __SPI1_H
 
 #include "stm32f10x.h"
-//#define SPI1_DMA 
+//#define SPI1_DMA
 #define SPI1_REMAP 1
 #if SPI1_REMAP
-  // SPI1 PA 4 5 6 7	
+  // SPI1 PA 4 5 6 7
 #define SPI1_SCS_PORT				GPIOA
 #define SPI1_SCS_PIN				GPIO_Pin_15
 #define SPI1_SCS_MODE				GPIO_Mode_Out_PP
-	
+
 #define SPI1_SCLK_PORT			GPIOB
 #define SPI1_SCLK_PIN				GPIO_Pin_3
-#define SPI1_SCLK_MODE			GPIO_Mode_AF_PP	
+#define SPI1_SCLK_MODE			GPIO_Mode_AF_PP
 
 #define SPI1_MISO_PORT			GPIOB
-#define SPI1_MISO_PIN				GPIO_Pin_4	
+#define SPI1_MISO_PIN				GPIO_Pin_4
 #define SPI1_MISO_MODE			GPIO_Mode_AF_PP
 
-#define SPI1_MOSI_PORT			GPIOB		
-#define SPI1_MOSI_PIN				GPIO_Pin_5	
+#define SPI1_MOSI_PORT			GPIOB
+#define SPI1_MOSI_PIN				GPIO_Pin_5
 #define SPI1_MOSI_MODE			GPIO_Mode_AF_PP
 
-#else 
+#else
 
-  // SPI1 PA 4 5 6 7	
+  // SPI1 PA 4 5 6 7
 #define SPI1_SCS_PORT				GPIOA
 #define SPI1_SCS_PIN				GPIO_Pin_4
 #define SPI1_SCS_MODE				GPIO_Mode_Out_PP
-	
+
 #define SPI1_SCLK_PORT			GPIOA
 #define SPI1_SCLK_PIN				GPIO_Pin_5
-#define SPI1_SCLK_MODE			GPIO_Mode_AF_PP	
+#define SPI1_SCLK_MODE			GPIO_Mode_AF_PP
 
 #define SPI1_MISO_PORT			GPIOA
-#define SPI1_MISO_PIN				GPIO_Pin_6	
+#define SPI1_MISO_PIN				GPIO_Pin_6
 #define SPI1_MISO_MODE			GPIO_Mode_AF_PP
 
-#define SPI1_MOSI_PORT			GPIOA		
-#define SPI1_MOSI_PIN				GPIO_Pin_7	
+#define SPI1_MOSI_PORT			GPIOA
+#define SPI1_MOSI_PIN				GPIO_Pin_7
 #define SPI1_MOSI_MODE			GPIO_Mode_AF_PP
 #endif
 

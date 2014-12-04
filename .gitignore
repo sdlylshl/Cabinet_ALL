@@ -19,6 +19,7 @@ tags
 ~$*
 *副本*
 *log*
+
 ### Common
 *.o
 *.d
@@ -47,6 +48,9 @@ tags
 
 ### STM32
 output
+*.uvguix*
+*.uvoptx
+
 *.orig
 *.dep
 *.ddk 
@@ -70,8 +74,12 @@ output
 *.htm
 *.sct
 *.map
-
-
+###VS2013
+#智能提示
+*.sdf
+#Nuget
+packages
+*.v12.suo
 ### C
 .metadata
 

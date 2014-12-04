@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{ed80d9c0-9511-4296-9ddf-3a764909c37b}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{c98cdbec-b2e6-411c-a607-5c3706ee89ef}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="项目说明">
+      <UniqueIdentifier>{fb080a27-5b56-4ab6-a21e-5fb26bd7d419}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+    </Filter>
+    <Filter Include="源文件\Source">
+      <UniqueIdentifier>{ef88772c-7e0a-4453-b20f-77c405e2912a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\W5500">
+      <UniqueIdentifier>{1ed9742b-17b8-4745-b6e7-984d6f538589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\System">
+      <UniqueIdentifier>{a3548e44-a4ef-49bd-9c9c-4c6cd31368f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\LCD12864">
+      <UniqueIdentifier>{0ba93dfb-8934-4184-8f2a-36bb1888e2be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\LED">
+      <UniqueIdentifier>{0141a653-db23-40c4-a0df-9842375482cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\::CMSIS">
+      <UniqueIdentifier>{e3ac631e-d485-476a-8f3a-af24910dab17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\::Device">
+      <UniqueIdentifier>{6678e801-f785-444b-8ff7-f70a6f3445f6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Retarget.c">
+      <Filter>源文件\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\stm32f10x_it.c">
+      <Filter>源文件\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Main.c">
+      <Filter>源文件\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Ethernet.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Ethernet\socket.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Ethernet\wizchip_conf.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Ethernet\W5500\w5500.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Platform\dma_w5500.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Platform\gpio_w5500.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Platform\spi_w5500.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Platform\uart_w5500.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Platform\timer_w5500.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Application\loopback_server.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Application\loopback_client.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\W5500\Application\Buffer\PfmBuffer\pfmBuffer.c">
+      <Filter>源文件\W5500</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\Usart\usart1.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\DMA.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\NVIC.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\RCC.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\Malloc\malloc.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\Delay\SysTick.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\SPI\spi2.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\Timer\timer1.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\Timer\timer2.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\Timer\timer3.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\Timer\timer4.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\SPI\spi3.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\SPI\spi1.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\CAN\can.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\LCD12864\LCD12864_gpio.c">
+      <Filter>源文件\LCD12864</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GPIO\led.c">
+      <Filter>源文件\LED</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GPIO\in.c">
+      <Filter>源文件\LED</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GPIO\out.c">
+      <Filter>源文件\LED</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\misc.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_can.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_gpio.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_rcc.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_spi.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_usart.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_wwdg.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_dma.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_tim.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\UV\RTE\Device\STM32F103VE\system_stm32f10x.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_crc.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_bkp.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_pwr.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_rtc.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_adc.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_cec.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_dac.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_dbgmcu.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_exti.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_flash.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_fsmc.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_i2c.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_iwdg.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_sdio.c">
+      <Filter>源文件\::Device</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Source\LCD12864\LCD12864P\LCD12864P.C">
+      <Filter>源文件\LCD12864</Filter>
+    </None>
+    <None Include="..\Source\LCD12864\LCD12864P\LCD12864P_main.C">
+      <Filter>源文件\LCD12864</Filter>
+    </None>
+    <None Include="..\UV\RTE\Device\STM32F103VE\startup_stm32f10x_hd.s">
+      <Filter>源文件\::Device</Filter>
+    </None>
+    <None Include="..\UV\RTE\Device\STM32F103VE\stm32f10x_conf.h">
+      <Filter>源文件\::Device</Filter>
+    </None>
+    <None Include="Readme.txt">
+      <Filter>项目说明</Filter>
+    </None>
+    <None Include="..\UV\RTE\Device\STM32F103VE\RTE_Device.h">
+      <Filter>源文件\::CMSIS</Filter>
+    </None>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\UV\RTE\RTE_Components.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -6,35 +6,35 @@
 static void SPI1_GPIO_Config(void)
 {
 			GPIO_InitTypeDef GPIO_InitStructure;
-	
+
 			RCC_APB2PeriphClockCmd(	RCC_APB2Periph_SPI1, ENABLE);
-	
-#if   SPI1_REMAP  
+
+#if   SPI1_REMAP
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO, ENABLE);
-    GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable,ENABLE);	
+    GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable,ENABLE);
     GPIO_PinRemapConfig(GPIO_Remap_SPI1,ENABLE);
 #else
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
-#endif  
+#endif
 
         GPIO_InitStructure.GPIO_Pin = SPI1_SCS_PIN;
         GPIO_InitStructure.GPIO_Mode = SPI1_SCS_MODE;
-        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
         GPIO_Init(SPI1_SCS_PORT, &GPIO_InitStructure);
-				
+
         GPIO_InitStructure.GPIO_Pin = SPI1_SCLK_PIN;
         GPIO_InitStructure.GPIO_Mode = SPI1_SCLK_MODE;
-        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
-        GPIO_Init(SPI1_SCLK_PORT, &GPIO_InitStructure);	
-				
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+        GPIO_Init(SPI1_SCLK_PORT, &GPIO_InitStructure);
+
 	      GPIO_InitStructure.GPIO_Pin = SPI1_MISO_PIN;
         GPIO_InitStructure.GPIO_Mode = SPI1_MISO_MODE;
-        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
-        GPIO_Init(SPI1_MISO_PORT, &GPIO_InitStructure);	
-				
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+        GPIO_Init(SPI1_MISO_PORT, &GPIO_InitStructure);
+
 				GPIO_InitStructure.GPIO_Pin = SPI1_MOSI_PIN;
         GPIO_InitStructure.GPIO_Mode = SPI1_MOSI_MODE;
-        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
         GPIO_Init(SPI1_MOSI_PORT, &GPIO_InitStructure);
 }
 
@@ -44,55 +44,54 @@ void SPI1_Config(void)
 		SPI_InitTypeDef   SPI_InitStructure;
 
 		SPI1_GPIO_Config();
-	
+
 	  /* SPI Config -------------------------------------------------------------*/
 	  SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
 	  SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
 	  SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
-	  SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;	//¿ÕÏÐÎªµÍ
-	  SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;//µÚÒ»¸öÌø±äÑØ²ÉÑù
+	  SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;	//ç©ºé—²ä¸ºä½Ž
+	  SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;//ç¬¬ä¸€ä¸ªè·³å˜æ²¿é‡‡æ ·
 	  SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;
 	  SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_4;
-	  SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;	//¸ßÎ»ÔÚÇ°
+	  SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;	//é«˜ä½åœ¨å‰
 	  SPI_InitStructure.SPI_CRCPolynomial = 7;
 
 	  SPI_Init(SPI1, &SPI_InitStructure);
-	  
+
 	  /* Enable SPI */
-#if !defined (SPI1_DMA)	
+#if !defined (SPI1_DMA)
 	SPI_Cmd(SPI1, ENABLE);
 #endif
 
 		while(SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET) ;
 }
 
-
 uint8_t SPI1_SendByte(uint8_t byte)
 {
 		uint8_t i = 0;
-		//µÈ´ý·¢ËÍÐÅºÅ¼Ä´æÆ÷Îª·Ç¿Õ£¬È»ºó·¢ËÍÒ»¸ö×Ö½Úµ½spi×ÜÏßÉÏ 
+		//ç­‰å¾…å‘é€ä¿¡å·å¯„å­˜å™¨ä¸ºéžç©ºï¼Œç„¶åŽå‘é€ä¸€ä¸ªå­—èŠ‚åˆ°spiæ€»çº¿ä¸Š
 	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET);
-         
+
 	  SPI_I2S_SendData(SPI1, byte);
-    //µÈ´ý½ÓÊÕÐÅºÅ¼Ä´æÆ÷Îª·Ç¿Õ£¬È»ºó´Óspi×ÜÏßÉÏ½ÓÊÕÒ»¸ö×Ö½Ú      
+    //ç­‰å¾…æŽ¥æ”¶ä¿¡å·å¯„å­˜å™¨ä¸ºéžç©ºï¼Œç„¶åŽä»Žspiæ€»çº¿ä¸ŠæŽ¥æ”¶ä¸€ä¸ªå­—èŠ‚
 	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET){if(i++>0xF0)break;}
-          
+
 	  return SPI_I2S_ReceiveData(SPI1);
 }
 
 uint8_t SPI1_ReceiveByte(void)
 {		uint8_t i = 0;
-		//Ê±ÐòÍ¬·¢Éú×Ö½ÚÒ»Ñù£¬Ö»ÊÇ²»·µ»Ø¶ÁÈ¡µÄ×Ö½Ú
+		//æ—¶åºåŒå‘ç”Ÿå­—èŠ‚ä¸€æ ·ï¼Œåªæ˜¯ä¸è¿”å›žè¯»å–çš„å­—èŠ‚
 	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET);
-         
+
 	  SPI_I2S_SendData(SPI1, 0);
-    //µÈ´ý½ÓÊÕÐÅºÅ¼Ä´æÆ÷Îª·Ç¿Õ£¬È»ºó´Óspi×ÜÏßÉÏ½ÓÊÕÒ»¸ö×Ö½Ú    
+    //ç­‰å¾…æŽ¥æ”¶ä¿¡å·å¯„å­˜å™¨ä¸ºéžç©ºï¼Œç„¶åŽä»Žspiæ€»çº¿ä¸ŠæŽ¥æ”¶ä¸€ä¸ªå­—èŠ‚
 	  while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET){if(i++>0xF0)break;}
-          
+
 	  return SPI_I2S_ReceiveData(SPI1);
 }
 void SPI1_select(void) {
-	SPI1_SCS(0);		//µÍµçÆ½ÓÐÐ§
+	SPI1_SCS(0);		//ä½Žç”µå¹³æœ‰æ•ˆ
 }
 void SPI1_deselect(void) {
 	SPI1_SCS(1);
