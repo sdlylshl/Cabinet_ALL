@@ -41,6 +41,7 @@
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\Retarget.c" />
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\stm32f10x_it.c" />
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\Main.c" />
+    <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\W5500\Application\Application.c" />
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\W5500\Ethernet.c" />
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\W5500\Ethernet\socket.c" />
     <ClCompile Include="..\Cabinet_Device\STM32F103VET\Source\W5500\Ethernet\wizchip_conf.c" />

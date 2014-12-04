@@ -13,7 +13,7 @@ uint32_t received_len;
 
 uint32_t time_return(void)
 {
-  return TIM4_GetCurrentTime();
+	return TIM4_GetCurrentTime();
 }
 
 
@@ -31,8 +31,6 @@ extern uint8_t RX_BUF[]; // RX Buffer for applications
 //4.确保读操作不会造成tail 跑到 head的前面
 
 
-
-
 unsigned char calcfcs(unsigned char *pmsg, unsigned char len)
 {
 	unsigned char result = 0;
@@ -48,8 +46,9 @@ extern uint16_t Dest_PORT; //DST_IP port
 
 #define	MAX_SOCK_NUM		8	/**< Maxmium number of socket */
 //socket状态机
-extern uint8_t ch_status[MAX_SOCK_NUM] ;	/** 0:close, 1:ready, 2:connected 3:init*/
-uint16_t any_port=1000;
+extern uint8_t ch_status[MAX_SOCK_NUM];	/** 0:close, 1:ready, 2:connected 3:init*/
+uint16_t any_port = 1000;
+
 
 void loopback_tcpc(uint8_t s)
 {
@@ -64,30 +63,30 @@ void loopback_tcpc(uint8_t s)
 		//Socket n的连接状态。在此状态下，可以使用 SEND 或者 RECV 命令进行数据包传输。
 	case SOCK_ESTABLISHED:                 /* if connection is established */
 		//printf("SOCK_ESTABLISHED\n");
-		if(time_return() - presentTime >= (tick_second * 2))
+		if (time_return() - presentTime >= (tick_second * 2))
 		{
 			presentTime = time_return();
 			//printf("SOCK_ESTABLISHED\n");
 		}
-		if(ch_status[s] == 1 || ch_status[s] == 4)
+		if (ch_status[s] == 1 || ch_status[s] == 4)
 		{
-			 printf("\r\n%d : Connected",s);
-			 ch_status[s] = 2;
+			printf("\r\n%d : Connected", s);
+			ch_status[s] = 2;
 		}
 
-		#if 0
+#if 0
 		if ((RSR_len = getSn_RX_RSR(s)) > 0)
 		{
 			printf("RSR_len: 0x%x\n", RSR_len);
-			 if (RSR_len > TX_RX_MAX_BUF_SIZE)
-			 	RSR_len = TX_RX_MAX_BUF_SIZE;
+			if (RSR_len > TX_RX_MAX_BUF_SIZE)
+				RSR_len = TX_RX_MAX_BUF_SIZE;
 
-			 received_len = recv(s, data_buf, RSR_len);
-			 send(s, data_buf, received_len);
+			received_len = recv(s, data_buf, RSR_len);
+			send(s, data_buf, received_len);
 		}
-		#endif
-
-	 tcpc_SendBuff(s);
+#endif
+		
+		tcpc_SendBuff(s);
 		//do_tcp_alive(s, mode);
 		//cruise_io(s, mode);
 		//recv_loop(s, mode);
@@ -97,7 +96,7 @@ void loopback_tcpc(uint8_t s)
 		//若要全部关闭，需要使用 DISCON 命令。
 		//要关闭Socket，需要使用 CLOSE命令。
 	case SOCK_CLOSE_WAIT:
-		if(time_return() - presentTime >= (tick_second * 2))
+		if (time_return() - presentTime >= (tick_second * 2))
 		{
 			presentTime = time_return();
 			printf("SOCK_CLOSE_WAIT\n");
@@ -106,9 +105,9 @@ void loopback_tcpc(uint8_t s)
 		//printf("\r\n%d : CLOSE_WAIT", s);
 		if ((RSR_len = getSn_RX_RSR(s)) > 0)         /* check Rx data */
 		{
-			 if (RSR_len > TX_RX_MAX_BUF_SIZE) RSR_len = TX_RX_MAX_BUF_SIZE;   /* if Rx data size is lager than TX_RX_MAX_BUF_SIZE */
-			                                                                            /* the data size to read is MAX_BUF_SIZE. */
-			 recv(s, data_buf, RSR_len);         /* read the received data */
+			if (RSR_len > TX_RX_MAX_BUF_SIZE) RSR_len = TX_RX_MAX_BUF_SIZE;   /* if Rx data size is lager than TX_RX_MAX_BUF_SIZE */
+			/* the data size to read is MAX_BUF_SIZE. */
+			recv(s, data_buf, RSR_len);         /* read the received data */
 		}
 		disconnect(s);
 		ch_status[s] = 0;
@@ -116,29 +115,29 @@ void loopback_tcpc(uint8_t s)
 		//0. Socket n处于关闭状态，资源被释放
 	case SOCK_CLOSED:
 		//printf("SOCK_CLOSED\n");
-		if(time_return() - presentTime >= (tick_second * 2))
+		if (time_return() - presentTime >= (tick_second * 2))
 		{
 			presentTime = time_return();
 			printf("SOCK_CLOSED\n");
 		}
 		/* if a socket is closed */
-		if(!ch_status[s])
+		if (!ch_status[s])
 		{
-			 printf("\r\n%d : Loop-Back TCP Client Started. port: %d", s, Dest_PORT);
-			 ch_status[s] = 1;
+			printf("\r\n%d : Loop-Back TCP Client Started. port: %d", s, Dest_PORT);
+			ch_status[s] = 1;
 		}
-		if(socket(s, Sn_MR_TCP, any_port++, 0x00) == 0)    /* reinitialize the socket */
+		if (socket(s, Sn_MR_TCP, any_port++, 0x00) == 0)    /* reinitialize the socket */
 		{
-			 printf("\a%d : Fail to create socket.",s);
-			 ch_status[s] = 0;
+			printf("\a%d : Fail to create socket.", s);
+			ch_status[s] = 0;
 		}
 		break;
 		//1. 0x13  SOCK_INIT 该位指示了 Socket n 端口打开并处于 TCP工作模式。
 	case SOCK_INIT:     /* if a socket is initiated */
 		//printf("SOCK_INIT\n");
-		if(ch_status[s] == 2)
+		if (ch_status[s] == 2)
 			ch_status[s] = 4;
-		if(time_return() - presentTime >= (tick_second * 2))
+		if (time_return() - presentTime >= (tick_second * 2))
 		{
 			connect(s, Dest_IP, Dest_PORT);
 			presentTime = time_return();
@@ -146,7 +145,7 @@ void loopback_tcpc(uint8_t s)
 		}
 		break;
 	default:
-		if(time_return() - presentTime >= (tick_second * 2))
+		if (time_return() - presentTime >= (tick_second * 2))
 		{
 			presentTime = time_return();
 			printf("default\n");
