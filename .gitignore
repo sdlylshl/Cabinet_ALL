@@ -77,6 +77,7 @@ output
 ###VS2013
 #智能提示
 *.sdf
+*.opensdf
 #Nuget
 packages
 *.suo

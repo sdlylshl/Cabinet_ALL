@@ -23,7 +23,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='CabinetDevice|Win32'">
     <NMakeOutput>CabinetDevice.exe</NMakeOutput>
-    <NMakePreprocessorDefinitions>USE_STDPERIPH_DRIVER</NMakePreprocessorDefinitions>
+    <NMakePreprocessorDefinitions>USE_STDPERIPH_DRIVER;STM32F10X_HD;__CC_ARM</NMakePreprocessorDefinitions>
     <IncludePath>..\Cabinet_Device\STM32F103VET\UV\RTE;..\Cabinet_Device\STM32F103VET\Source;$(Keil_INCLUDEDE_PATH);$(STM32F1xx_DFP)</IncludePath>
     <NMakeBuildCommandLine>"D:\Program Files\Keil_v5\UV4\UV4.exe " -b ..\Cabinet_Device\STM32F103VET\UV\CabinetDevice.uvprojx -t "CabinetDevice" -j0 -o Build.log</NMakeBuildCommandLine>
   </PropertyGroup>
