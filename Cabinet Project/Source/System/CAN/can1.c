@@ -1,5 +1,5 @@
 
-#include "can.h"
+#include "can1.h"
 /*采用查询方式还是中断方式接收数据开关，屏闭为中断方式*/
 #define  Rx_Polling	1	
 

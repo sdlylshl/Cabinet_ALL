@@ -1,6 +1,7 @@
 #include "config.h"
 char *str = "\r\n This is a USART1_printf demo \r\n";
 
+uint32_t DEVICE_ID_CRC;
 int main()
 {
 	uint8_t i;

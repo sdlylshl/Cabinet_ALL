@@ -31,7 +31,7 @@
 #include ".\Timer\timer3.h"
 #include ".\Timer\timer4.h"
 
-#include ".\CAN\can.h"
+#include ".\CAN\can1.h"
 
 typedef enum {
   POLLING,

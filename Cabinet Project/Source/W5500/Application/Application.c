@@ -17,9 +17,9 @@
 
 void Application(void){
 	// 通过第1路socket创建连接
-	// loopback_tcpc(1);
+	 loopback_tcpc(1);
 	// 解析数据并执行相应命令
-
+	
 }
 #else
 

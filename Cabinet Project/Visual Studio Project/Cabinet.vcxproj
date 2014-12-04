@@ -41,6 +41,8 @@
     <ClCompile Include="..\Source\Retarget.c" />
     <ClCompile Include="..\Source\stm32f10x_it.c" />
     <ClCompile Include="..\Source\Main.c" />
+    <ClCompile Include="..\Source\System\CAN\can1.c" />
+    <ClCompile Include="..\Source\System\CRC\crc.c" />
     <ClCompile Include="..\Source\W5500\Ethernet.c" />
     <ClCompile Include="..\Source\W5500\Ethernet\socket.c" />
     <ClCompile Include="..\Source\W5500\Ethernet\wizchip_conf.c" />
@@ -67,7 +69,6 @@
     <ClCompile Include="..\Source\System\Timer\timer4.c" />
     <ClCompile Include="..\Source\System\SPI\spi3.c" />
     <ClCompile Include="..\Source\System\SPI\spi1.c" />
-    <ClCompile Include="..\Source\System\CAN\can.c" />
     <ClCompile Include="..\Source\LCD12864\LCD12864_gpio.c" />
     <ClCompile Include="..\Source\GPIO\led.c" />
     <ClCompile Include="..\Source\GPIO\in.c" />

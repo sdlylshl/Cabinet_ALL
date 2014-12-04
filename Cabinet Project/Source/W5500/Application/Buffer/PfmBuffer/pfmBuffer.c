@@ -6,7 +6,7 @@
 //单条指令最大长度
 #define MAX_INSTRUCTION_LEN 128
 extern uint8_t RX_BUF[0xFF]; // RX Buffer for applications
-
+extern uint32_t DEVICE_ID_CRC;
 uint8_t recv_write;
 uint8_t recv_read;
 
@@ -140,6 +140,20 @@ void ParseInstruction()
 
                     //CRC校验 包含包头0xE0 0x55 0xAA +len + data +crc
                     if(CRC_check(recv_read,len_tmp+4)){
+#ifdef CABINET_DEVICE 
+						//data
+						if (DEVICE_ID_CRC == RX_BUF[recv_read + 4])
+						{
+							//开锁
+						Locker_open(RX_BUF[recv_read + 4]);
+						}
+						else{
+							//ERRO1：设备错误
+
+						}
+#endif // CABINET_DEVICE 
+
+						
                         //memcpy();
                         //1.获取指令表
                         datcmd_t[0].len = len_tmp;
@@ -148,7 +162,11 @@ void ParseInstruction()
                             datcmd_t[0].data[i]= RX_BUF[recv_read+i+4];
                         }
                         datcmd_t[0].usable = 1;
-                    }
+					}
+					else{
+					//ERRO2：数据接收失败	回应失败信息
+						
+					}
                     //移到下一条指令	
                     PfmBuffer_Next(len_tmp+8);
 

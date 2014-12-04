@@ -123,9 +123,6 @@
     <ClCompile Include="..\Source\System\SPI\spi1.c">
       <Filter>源文件\System</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\System\CAN\can.c">
-      <Filter>源文件\System</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\LCD12864\LCD12864_gpio.c">
       <Filter>源文件\LCD12864</Filter>
     </ClCompile>
@@ -180,6 +177,12 @@
     <ClCompile Include="D:\Program%20Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\src\stm32f10x_rtc.c">
       <Filter>源文件\::Device</Filter>
     </ClCompile>
+    <ClCompile Include="..\Source\System\CRC\crc.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\System\CAN\can1.c">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Source\LCD12864\LCD12864P\LCD12864P.C">
@@ -198,7 +201,7 @@
       <Filter>源文件\::Device</Filter>
     </None>
     <None Include="Readme.txt">
-      <Filter>项目说明\</Filter>
+      <Filter>项目说明</Filter>
     </None>
   </ItemGroup>
 </Project>
