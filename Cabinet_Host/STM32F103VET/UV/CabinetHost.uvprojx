@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>CabinetDevice</TargetName>
+      <TargetName>CabinetHost</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
@@ -692,73 +692,73 @@
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="3.30.0" condition="CMSIS Core">
         <package name="CMSIS" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="ARM" version="4.1.1"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS Device">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="CAN" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="CRC" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="DMA" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="3.5.1" condition="STM32F1 STDPERIPH">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="GPIO" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="RCC" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="SPI" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="TIM" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="USART" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="WWDG" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </component>
     </components>
@@ -792,7 +792,7 @@
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS Device"/>
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </file>
       <file attr="config" category="source" condition="STM32F1xx HD" name="Device\Source\ARM\startup_stm32f10x_hd.s">
@@ -800,7 +800,7 @@
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS Device"/>
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </file>
       <file attr="config" category="source" name="Device\StdPeriph_Driver\templates\stm32f10x_conf.h" version="3.5.0">
@@ -808,7 +808,7 @@
         <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="3.5.1" condition="STM32F1 STDPERIPH"/>
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </file>
       <file attr="config" category="source" name="Device\Source\system_stm32f10x.c">
@@ -816,7 +816,7 @@
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS Device"/>
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
-          <targetInfo name="CabinetDevice"/>
+          <targetInfo name="CabinetHost"/>
         </targetInfos>
       </file>
     </files>

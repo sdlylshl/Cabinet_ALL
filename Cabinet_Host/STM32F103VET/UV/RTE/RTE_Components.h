@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'CabinetDevice' 
- * Target:  'CabinetDevice' 
+ * Project: 'CabinetHost' 
+ * Target:  'CabinetHost' 
  */
 
 #ifndef RTE_COMPONENTS_H

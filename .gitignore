@@ -79,7 +79,7 @@ output
 *.sdf
 #Nuget
 packages
-*.v12.suo
+*.suo
 ### C
 .metadata
 
