@@ -1,5 +1,8 @@
+//printf();
+#include "stdio.h"
 
-#include "System_config.h"
+#include "version.h"
+//#include "System_config.h"
 /*
  * 函数名：NVIC_Config
  * 描述  ：DMA 中断配置

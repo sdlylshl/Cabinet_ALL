@@ -1,7 +1,9 @@
 #ifndef __SYSTICK_H
 #define __SYSTICK_H
 
-#include "stm32f10x.h"
+//#include "stm32f10x.h"
+
+#include "version.h"
 
 #define  SYSTICK_1US    1000000
 #define  SYSTICK_10US   100000

@@ -1,7 +1,8 @@
 
 #include "timer3.h"
-#include "config.h"
 
+//LED3();
+#include "config.h"
 volatile uint32_t time3=0; // ms 计时变量
 
 static void TIM3_NVIC_Configuration(void)

@@ -1,6 +1,8 @@
 #ifndef _CAN_H_
 #define _CAN_H_
-#include "stm32f10x.h"
+
+
+#include "version.h"
 
 //CAN_REMAP[1:0]=¡±10¡±
 //(2)

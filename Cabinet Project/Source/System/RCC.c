@@ -1,6 +1,7 @@
 
-#include "System_config.h"
+//#include "System_config.h"
 
+#include "version.h"
 void RCC_Config(void)
 {
 	RCC_DeInit();

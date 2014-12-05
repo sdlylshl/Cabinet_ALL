@@ -1,3 +1,7 @@
+
+#include <stdio.h>
+#include <stdarg.h>
+
 #include "usart1.h"
 
 //DMA Buff

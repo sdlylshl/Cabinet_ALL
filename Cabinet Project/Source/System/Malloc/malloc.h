@@ -13,7 +13,8 @@
 //All rights reserved									  
 //////////////////////////////////////////////////////////////////////////////////
 
-#include "..\System_config.h"
+#include "version.h"
+//#include "..\System_config.h"
 
 //typedef unsigned long  uint32_t;
 //typedef unsigned short uint16_t;

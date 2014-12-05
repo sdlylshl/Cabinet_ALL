@@ -1,6 +1,6 @@
 
-#include "System_config.h"
-
+//#include "System_config.h"
+#include "version.h"
 // 外设    通道1     		通道2     	通道3     	通道4       通道5       通道6        通道7 
 // ADC     ADC1       
 // SPI                 SPI1_RX     SPI1_TX     SPI2_RX     SPI2_TX   

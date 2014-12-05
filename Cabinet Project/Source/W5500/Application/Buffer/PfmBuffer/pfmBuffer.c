@@ -1,12 +1,21 @@
-#include "stm32f10x.h"
+
+#include <stdio.h>
 
 #include "pfmBuffer.h"
+
+#include "./W5500/Ethernet_config.h"
+
+//CRC_Enable();
+#include "./System/System_config.h"
+
+
 //缓冲区长度
 //#define TX_RX_MAX_BUF_SIZE	255
 //单条指令最大长度
 #define MAX_INSTRUCTION_LEN 128
+
 extern uint8_t RX_BUF[0xFF]; // RX Buffer for applications
-extern uint32_t DEVICE_ID_CRC;
+uint32_t DEVICE_ID_CRC;
 uint8_t recv_write;
 uint8_t recv_read;
 

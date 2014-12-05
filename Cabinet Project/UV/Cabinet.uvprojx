@@ -405,7 +405,7 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source</GroupName>
+          <GroupName>Main</GroupName>
           <Files>
             <File>
               <FileName>Retarget.c</FileName>
@@ -428,11 +428,6 @@
           <GroupName>W5500</GroupName>
           <Files>
             <File>
-              <FileName>Ethernet.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Source\W5500\Ethernet.c</FilePath>
-            </File>
-            <File>
               <FileName>socket.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Source\W5500\Ethernet\socket.c</FilePath>
@@ -448,29 +443,9 @@
               <FilePath>..\Source\W5500\Ethernet\W5500\w5500.c</FilePath>
             </File>
             <File>
-              <FileName>dma_w5500.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Source\W5500\Platform\dma_w5500.c</FilePath>
-            </File>
-            <File>
               <FileName>gpio_w5500.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Source\W5500\Platform\gpio_w5500.c</FilePath>
-            </File>
-            <File>
-              <FileName>spi_w5500.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Source\W5500\Platform\spi_w5500.c</FilePath>
-            </File>
-            <File>
-              <FileName>uart_w5500.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Source\W5500\Platform\uart_w5500.c</FilePath>
-            </File>
-            <File>
-              <FileName>timer_w5500.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Source\W5500\Platform\timer_w5500.c</FilePath>
             </File>
             <File>
               <FileName>loopback_server.c</FileName>
@@ -563,14 +538,19 @@
               <FilePath>..\Source\System\SPI\spi1.c</FilePath>
             </File>
             <File>
-              <FileName>can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Source\System\CAN\can.c</FilePath>
-            </File>
-            <File>
               <FileName>crc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Source\System\CRC\crc.c</FilePath>
+            </File>
+            <File>
+              <FileName>can1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\System\CAN\can1.c</FilePath>
+            </File>
+            <File>
+              <FileName>SID.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\System\SID.c</FilePath>
             </File>
           </Files>
         </Group>

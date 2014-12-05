@@ -1,9 +1,7 @@
 #ifndef TIME_4_H
 #define TIME_4_H
 
-#include "config.h"
-
-#include "stm32f10x.h"
+#include "version.h"
 
 extern volatile uint32_t time4;
 

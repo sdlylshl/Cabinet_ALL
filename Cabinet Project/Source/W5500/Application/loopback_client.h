@@ -1,8 +1,9 @@
 #ifndef _LOOPBACK_CLIENT_H_
 #define _LOOPBACK_CLIENT_H_
 
-#include <stdint.h>
-#include "..\Ethernet_Config.h"
+#include "version.h"
+
+//#include "..\Ethernet_Config.h"
 
 void loopback_tcpc(uint8_t sn);
 int32_t loopback_udpc(uint8_t sn);

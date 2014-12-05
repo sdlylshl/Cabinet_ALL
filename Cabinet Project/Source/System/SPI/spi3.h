@@ -1,7 +1,8 @@
 #ifndef __SPI3_H
 #define __SPI3_H
 
-#include "stm32f10x.h"
+#include "version.h"
+
 //#define SPI3_DMA 
   // SPI3 PB 3 4 5	
 #define SPI3_SCS_PORT				GPIOA

@@ -1,5 +1,7 @@
 
 #include "timer2.h"
+
+//LED();
 #include "config.h"
 
 volatile uint32_t time2=0; // ms 计时变量

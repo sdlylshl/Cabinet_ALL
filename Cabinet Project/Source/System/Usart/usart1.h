@@ -1,10 +1,8 @@
 #ifndef __USART1_H
 #define	__USART1_H
 
-#include "..\System_config.h"
-
-#include <stdio.h>
-#include <stdarg.h>
+//#include "..\System_config.h"
+#include "version.h"
 //USART1
 #define USART1_NVIC			1
 //#define USART1_DMA			0

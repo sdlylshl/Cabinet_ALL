@@ -7,8 +7,8 @@
 //#define CABINET_HOST 1
 
 //#include "config.h"
-#include "stm32f10x.h"
-
+//#include "stm32f10x.h"
+#include "version.h"
 //全局IO配置
 #include "io_config.h"
 #include ".\GPIO\led.h"

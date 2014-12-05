@@ -1,8 +1,8 @@
 #ifndef _GPIO_HANDLER_H_
 #define _GPIO_HANDLER_H_
-
-
-#include "../Ethernet_Config.h"
+#include "version.h"
+//#include "../System/System_config.h"
+//#include "../Ethernet_Config.h"
 #define  W5500_RCC_AHB_PORT	 (0|RCC_AHBPeriph_DMA1)
 #define  W5500_RCC_APB1_PORT (RCC_APB1Periph_SPI2)
 
@@ -71,8 +71,6 @@
 #define	WIZ_nRST(x)   x ? GPIO_SetBits(WIZ_nRST_PORT,WIZ_nRST_PIN): GPIO_ResetBits(WIZ_nRST_PORT,WIZ_nRST_PIN)
 #define	WIZ_SCS(x)   x ? GPIO_SetBits(WIZ_SCS_PORT,WIZ_SCS_PIN): GPIO_ResetBits(WIZ_SCS_PORT,WIZ_SCS_PIN)
 													//uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
-void wizchip_reset(void);
-uint8_t wizchip_isreday(void);
 void WIZ_GPIO_Configuration(void);
 
 #endif

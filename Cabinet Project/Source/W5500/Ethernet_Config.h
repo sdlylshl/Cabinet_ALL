@@ -1,18 +1,20 @@
-#ifndef __COMMON_H_
-#define __COMMON_H_
+#ifndef __ETHERNET_CONFIG_H
+#define __ETHERNET_CONFIG_H
 // π”√StdPeriph_Driverø‚
 //#define USE_STDPERIPH_DRIVER 1
 
 //#include "stdint.h"
-
-#include "stm32f10x.h"
+#include "version.h"
+//#include "stm32f10x.h"
 //#include "stm32f4xx.h"
-#include "../System/System_config.h"
-#include "Ethernet.h"
+
+
 #include "Ethernet\socket.h"
 #include "Ethernet\W5500\w5500.h"
 #include "Ethernet\wizchip_conf.h"
 //extern void printf();
+
+#include "Application\Application.h"
 #include "Application\loopback_server.h"
 #include "Application\loopback_client.h"
 #include "Application\Buffer\pfmBuffer\pfmBuffer.h"

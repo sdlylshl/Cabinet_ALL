@@ -1,7 +1,8 @@
 #ifndef __SPI2_H
 #define __SPI2_H
 
-#include "stm32f10x.h"
+#include "version.h"
+//#include "stm32f10x.h"
 //#define SPI2_DMA
   // SPI2 PB 12 13 14 15
 #define SPI2_SCS_PORT				GPIOB

@@ -1,5 +1,3 @@
-#include "stm32f10x.h"
-#include "config.h"
 
 #include "spi3.h"
 

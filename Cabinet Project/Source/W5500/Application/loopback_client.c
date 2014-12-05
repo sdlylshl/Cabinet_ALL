@@ -1,6 +1,12 @@
-#include "stm32f10x.h"
+
+#include "stdio.h"
 
 #include "loopback_client.h"
+// ∫Í∂®“Â
+#include "./W5500/Ethernet_config.h"
+// TIM4_GetCurrentTime()
+#include "./System/System_config.h"
+
 
 #define tick_second 100
 

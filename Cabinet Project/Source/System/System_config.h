@@ -3,9 +3,9 @@
 
 // 子项目引用
 // #include "..\System_config.h"
+// #include "config.h"
 
-
-#include "..\config.h"
+#include "version.h"
 
 //#include "stm32f10x.h"
 #include ".\Malloc\malloc.h"
@@ -38,10 +38,11 @@ typedef enum {
   INTERRUPT,
   DMA
 } WorkMode;
+
+uint8_t * GetSID(void);
 void DMA_Config(DMA_Channel_TypeDef* DMA_CHx,uint32_t PeripheralBaseAddr,uint32_t MemoryBaseAddr,uint32_t BufferSize);
 void NVIC_Config(void);
 void RCC_Config(void);
-
 //core_cm3.h
 __STATIC_INLINE void NVIC_SystemReset(void);
 __STATIC_INLINE int32_t ITM_ReceiveChar (void);

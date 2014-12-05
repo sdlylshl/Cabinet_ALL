@@ -1,7 +1,8 @@
 #ifndef __SPI1_H
 #define __SPI1_H
 
-#include "stm32f10x.h"
+#include "version.h"
+
 //#define SPI1_DMA
 #define SPI1_REMAP 1
 #if SPI1_REMAP
