@@ -1,5 +1,6 @@
 #include "out.h"
 
+#include ".\System\System_config.h"
 /*
  * 函数名：LOCK_GPIO_Config
  * 描述  ：配置LOCK用到的I/O口

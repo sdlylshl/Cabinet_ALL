@@ -49,6 +49,9 @@ uint8_t wizchip_read(void);
 void  wizchip_write(uint8_t wb);
 int Ethernet_Init(void);
 int Ethernet_main(void);
+
+void Application(void);
+
 #endif /* __ETHERNET_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

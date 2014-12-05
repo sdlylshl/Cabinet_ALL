@@ -8,15 +8,15 @@
 // SPI1
 #include "./System/System_config.h"
 
-//*************Ê¹ÓÃËµÃ÷*****************
-// 1.ÅäÖÃÒªÊ¹ÓÃµÄSPI
-// 2.½«SPIº¯Êı×¢²áµ½´Ëº¯Êı
+//*************ä½¿ç”¨è¯´æ˜*****************
+// 1.é…ç½®è¦ä½¿ç”¨çš„SPI
+// 2.å°†SPIå‡½æ•°æ³¨å†Œåˆ°æ­¤å‡½æ•°
 //void wizchip_spi_init(void);
 //void wizchip_select(void);
 //void wizchip_deselect(void);
 //void wizchip_write_byte(uint8_t wb);
 //uint8_t wizchip_read_byte();
-// 3.ÅäÖÃIO
+// 3.é…ç½®IO
 //void wizchip_gpio_init();
 //void wizchip_reset(void);
 //uint8_t wizchip_isreday(void);
@@ -24,39 +24,39 @@
 
 
 
-// 1.¿Í»§¶ËÖ÷¶¯Á¬½Ó·şÎñÆ÷
-// 2.·şÎñÆ÷Î¬»¤Ò»¸ö¿ÉÓÃÁĞ±í
-// 3.¿ÉÓÃÁĞ±íÏÂÃæÎ¬»¤Ò»¸ö¿ÉÓÃÉè±¸±í£¨ÓÉÓÃ»§ÅäÖÃ£©
-// 4.¿Í»§¶ËÖ»¸ºÔğÖ´ĞĞ·şÎñ¶ËµÄÃüÁî£¬ÎŞ·¨¼ì²âÉè±¸ºÃ»µ
-// 5.¿Í»§¶ËA.¶¨Ê±ÉÏ±¨Éè±¸¶Ë¿Ú×´Ì¬ B.Éè±¸Ö´ĞĞºóÉÏ±¨Éè±¸¶Ë¿Ú×´Ì¬¡£
+// 1.å®¢æˆ·ç«¯ä¸»åŠ¨è¿æ¥æœåŠ¡å™¨
+// 2.æœåŠ¡å™¨ç»´æŠ¤ä¸€ä¸ªå¯ç”¨åˆ—è¡¨
+// 3.å¯ç”¨åˆ—è¡¨ä¸‹é¢ç»´æŠ¤ä¸€ä¸ªå¯ç”¨è®¾å¤‡è¡¨ï¼ˆç”±ç”¨æˆ·é…ç½®ï¼‰
+// 4.å®¢æˆ·ç«¯åªè´Ÿè´£æ‰§è¡ŒæœåŠ¡ç«¯çš„å‘½ä»¤ï¼Œæ— æ³•æ£€æµ‹è®¾å¤‡å¥½å
+// 5.å®¢æˆ·ç«¯A.å®šæ—¶ä¸ŠæŠ¥è®¾å¤‡ç«¯å£çŠ¶æ€ B.è®¾å¤‡æ‰§è¡Œåä¸ŠæŠ¥è®¾å¤‡ç«¯å£çŠ¶æ€ã€‚
 //
 
 
-#ifdef CABINET_DEVICE 
-// ¿Í»§¶Ë¶¯×÷
-// 1.Á¬½Ó·şÎñÆ÷
-// 2.¶¨Ê±ÉÏ±¨Éè±¸¶Ë¿Ú×´Ì¬
-// 3.½ÓÊÕ·şÎñÆ÷Ö¸Áî
+#ifdef CABINET_DEVICE
+// å®¢æˆ·ç«¯åŠ¨ä½œ
+// 1.è¿æ¥æœåŠ¡å™¨
+// 2.å®šæ—¶ä¸ŠæŠ¥è®¾å¤‡ç«¯å£çŠ¶æ€
+// 3.æ¥æ”¶æœåŠ¡å™¨æŒ‡ä»¤
 
 void Application(void){
-	// Í¨¹ıµÚ1Â·socket´´½¨Á¬½Ó
-	 loopback_tcpc(1);
-	// ½âÎöÊı¾İ²¢Ö´ĞĞÏàÓ¦ÃüÁî
-	
+	// é€šè¿‡ç¬¬1è·¯socketåˆ›å»ºè¿æ¥
+	loopback_tcpc(1);
+	// è§£ææ•°æ®å¹¶æ‰§è¡Œç›¸åº”å‘½ä»¤
+	ParseInstruction();
 }
 #else
 
-// ·şÎñ¶Ë¶¯×÷
-//  1.¼àÌı´«ÈëÁ¬½Ó
-//  2.ÅĞ¶Ï´«ÈëÀàĞÍ
-//  3.´´½¨Á¬½Ó±í ----×Ü±í¶ÔÓ¦
+// æœåŠ¡ç«¯åŠ¨ä½œ
+//  1.ç›‘å¬ä¼ å…¥è¿æ¥
+//  2.åˆ¤æ–­ä¼ å…¥ç±»å‹
+//  3.åˆ›å»ºè¿æ¥è¡¨ ----æ€»è¡¨å¯¹åº”
 //  ID = CRC();
 void Application(void){
 
 
 }
 
-#endif // CABINET_DEVICE 
+#endif // CABINET_DEVICE
 
 
 typedef struct _CONFIG_MSG
@@ -99,12 +99,12 @@ typedef struct _CONFIG_TYPE_DEF
 
 //TX MEM SIZE- SOCKET 0-7:2KB
 //RX MEM SIZE- SOCKET 0-7:2KB
-uint8_t txsize[MAX_SOCK_NUM] = {2,2,2,2,2,2,2,2};
-uint8_t rxsize[MAX_SOCK_NUM] = {2,2,2,2,2,2,2,2};
+uint8_t txsize[MAX_SOCK_NUM] = { 2, 2, 2, 2, 2, 2, 2, 2 };
+uint8_t rxsize[MAX_SOCK_NUM] = { 2, 2, 2, 2, 2, 2, 2, 2 };
 
 //FOR TCP Client
 //Configuration Network Information of TEST PC
-uint8_t Dest_IP[4] = {192, 168, 88, 58}; //DST_IP Address
+uint8_t Dest_IP[4] = { 192, 168, 88, 58 }; //DST_IP Address
 uint16_t Dest_PORT = 8081; //DST_IP port
 
 uint8_t ch_status[MAX_SOCK_NUM] = { 0, };	/** 0:close, 1:ready, 2:connected 3:init*/
@@ -124,32 +124,32 @@ uint8_t gDATABUF[DATA_BUF_SIZE];
 
 
 wiz_PhyConf gWIZPHYCONF = {
-PHY_CONFBY_SW,
+	PHY_CONFBY_SW,
 	PHY_MODE_AUTONEGO,
 	PHY_SPEED_100,
 	PHY_DUPLEX_FULL
 };
 
 wiz_NetInfo gWIZNETINFO = {
-{ 0x00, 0x08, 0xdc, 0x00, 0xab, 0xcf },   ///< Source Mac Address
-{ 192, 168,	88, 11 },                     ///< Source IP Address
-{ 255, 255, 255, 0 },                     ///< Subnet Mask
-{ 192, 168, 88, 1 },                       ///< Gateway IP Address
-{ 202, 102, 152, 3 },                           ///< DNS server IP Address
- NETINFO_STATIC 		                      ///< 1 - Static, 2 - DHCP
+	{ 0x00, 0x08, 0xdc, 0x00, 0xab, 0xcf },   ///< Source Mac Address
+	{ 192, 168, 88, 11 },                     ///< Source IP Address
+	{ 255, 255, 255, 0 },                     ///< Subnet Mask
+	{ 192, 168, 88, 1 },                       ///< Gateway IP Address
+	{ 202, 102, 152, 3 },                           ///< DNS server IP Address
+	NETINFO_STATIC 		                      ///< 1 - Static, 2 - DHCP
 };
 
-wiz_NetTimeout gWIZNETTIMEOUT ={
+wiz_NetTimeout gWIZNETTIMEOUT = {
 	3, 					//< retry count
 	6000				//< time unit 100us
 };
 
-//Íâ²¿½Ó¿Úº¯Êı
+//å¤–éƒ¨æ¥å£å‡½æ•°
 void wizchip_spi_init(void){
 	SPI1_Config();
 }
 void wizchip_select(void) {
-	//WIZ_SCS(0);		//µÍµçÆ½ÓĞĞ§
+	//WIZ_SCS(0);		//ä½ç”µå¹³æœ‰æ•ˆ
 	SPI1_select();
 }
 
@@ -173,53 +173,53 @@ void wizchip_gpio_init(){
 void wizchip_reset(void) {
 
 	WIZ_nRST(0);
-	Delay_ms(1); //´óÓÚ500us µÍµçÆ½ÓĞĞ§
+	Delay_ms(1); //å¤§äº500us ä½ç”µå¹³æœ‰æ•ˆ
 	WIZ_nRST(1);
 	Delay_ms(10);
 }
 
 uint8_t wizchip_isreday(void){
-	
-return (!GPIO_ReadInputDataBit(WIZ_RDY_PORT, WIZ_RDY_PIN)); //µÍµçÆ½²úÉúÖĞ¶Ï
-	
+
+	return (!GPIO_ReadInputDataBit(WIZ_RDY_PORT, WIZ_RDY_PIN)); //ä½ç”µå¹³äº§ç”Ÿä¸­æ–­
+
 }
 
 void network_init(void) {
 	uint8_t tmpstr[6];
-	ctlnetwork(CN_SET_NETINFO, (void*) &gWIZNETINFO);
-	ctlnetwork(CN_GET_NETINFO, (void*) &gWIZNETINFO);
+	ctlnetwork(CN_SET_NETINFO, (void*)&gWIZNETINFO);
+	ctlnetwork(CN_GET_NETINFO, (void*)&gWIZNETINFO);
 	// Display Network Information
-	ctlwizchip(CW_GET_ID, (void*) tmpstr);
-	printf("\r\n=== %s NET CONF ===\r\n", (char*) tmpstr);
+	ctlwizchip(CW_GET_ID, (void*)tmpstr);
+	printf("\r\n=== %s NET CONF ===\r\n", (char*)tmpstr);
 	printf("MAC: %02X:%02X:%02X:%02X:%02X:%02X\r\n", gWIZNETINFO.mac[0],
-			gWIZNETINFO.mac[1], gWIZNETINFO.mac[2], gWIZNETINFO.mac[3],
-			gWIZNETINFO.mac[4], gWIZNETINFO.mac[5]);
+		gWIZNETINFO.mac[1], gWIZNETINFO.mac[2], gWIZNETINFO.mac[3],
+		gWIZNETINFO.mac[4], gWIZNETINFO.mac[5]);
 	printf("SIP: %d.%d.%d.%d\r\n", gWIZNETINFO.ip[0], gWIZNETINFO.ip[1],
-			gWIZNETINFO.ip[2], gWIZNETINFO.ip[3]);
+		gWIZNETINFO.ip[2], gWIZNETINFO.ip[3]);
 	printf("GAR: %d.%d.%d.%d\r\n", gWIZNETINFO.gw[0], gWIZNETINFO.gw[1],
-			gWIZNETINFO.gw[2], gWIZNETINFO.gw[3]);
+		gWIZNETINFO.gw[2], gWIZNETINFO.gw[3]);
 	printf("SUB: %d.%d.%d.%d\r\n", gWIZNETINFO.sn[0], gWIZNETINFO.sn[1],
-			gWIZNETINFO.sn[2], gWIZNETINFO.sn[3]);
+		gWIZNETINFO.sn[2], gWIZNETINFO.sn[3]);
 	printf("DNS: %d.%d.%d.%d\r\n", gWIZNETINFO.dns[0], gWIZNETINFO.dns[1],
-			gWIZNETINFO.dns[2], gWIZNETINFO.dns[3]);
+		gWIZNETINFO.dns[2], gWIZNETINFO.dns[3]);
 	printf("======================\r\n");
 
-	//ÅäÖÃ³¬Ê±Ê±¼ä
-	ctlnetwork (CN_SET_TIMEOUT,&gWIZNETTIMEOUT);
+	//é…ç½®è¶…æ—¶æ—¶é—´
+	ctlnetwork(CN_SET_TIMEOUT, &gWIZNETTIMEOUT);
 	//ctlnetwork (CN_SET_NETMODE
 
 }
 
 
 int Ethernet_Init(void)
-	{
-		uint8_t tmp = 0;
-//		uint32_t overtime = 0;
-		uint8_t memsize[2][8] = { { 2, 2, 2, 2, 2, 2, 2, 2 }, { 2, 2, 2, 2, 2, 2, 2, 2 } };
+{
+	uint8_t tmp = 0;
+	//		uint32_t overtime = 0;
+	uint8_t memsize[2][8] = { { 2, 2, 2, 2, 2, 2, 2, 2 }, { 2, 2, 2, 2, 2, 2, 2, 2 } };
 
 
 	//RCC_Config();
-	
+
 	wizchip_spi_init();
 	WIZ_GPIO_Configuration();
 	//WIZ_SPI_Configuration();
@@ -227,7 +227,7 @@ int Ethernet_Init(void)
 	//Timer_Configuration();
 	//WIZ_USART_Configuration(); /* SysTick end of count event each 10ms */
 
-//	RCC_GetClocksFreq(&RCC_Clocks);
+	//	RCC_GetClocksFreq(&RCC_Clocks);
 	// SysTick_Config(RCC_Clocks.HCLK_Frequency / 100);
 
 	/* Add your application code here */
@@ -241,26 +241,26 @@ int Ethernet_Init(void)
 	printf("PCLK2 frequency: %d\r\n", RCC_ClockFreq.PCLK2_Frequency);
 
 	// reg_wizchip_cris_cbfunc(void(*cris_en)(void), void(*cris_ex)(void))
-	//1.×¢²áÆ¬Ñ¡º¯Êı
+	//1.æ³¨å†Œç‰‡é€‰å‡½æ•°
 	reg_wizchip_cs_cbfunc(wizchip_select, wizchip_deselect);
 
-	//2.×¢²áSPI¶ÁĞ´º¯Êı
+	//2.æ³¨å†ŒSPIè¯»å†™å‡½æ•°
 	reg_wizchip_spi_cbfunc(wizchip_read_byte, wizchip_write_byte);
 	//2.
 	//reg_wizchip_spiburst_cbfunc(wizchip_read_burst, wizchip_write_burst);
-	//2.3 BUS¶ÁĞ´
+	//2.3 BUSè¯»å†™
 	//void reg_wizchip_bus_cbfunc(uint8_t(*bus_rb)(uint32_t addr), void (*bus_wb)(uint32_t addr, uint8_t wb));
 
-	//3.¸´Î»W5500
-		wizchip_reset();
+	//3.å¤ä½W5500
+	wizchip_reset();
 
-		//4.µÈ´ı¾ÍĞ÷RDY
+	//4.ç­‰å¾…å°±ç»ªRDY
 	while (wizchip_isreday()) {
 		;
 	}
 
-		/* WIZCHIP SOCKET Buffer initialize */
-	if (ctlwizchip(CW_INIT_WIZCHIP, (void*) memsize) == -1) {
+	/* WIZCHIP SOCKET Buffer initialize */
+	if (ctlwizchip(CW_INIT_WIZCHIP, (void*)memsize) == -1) {
 		printf("WIZCHIP Initialized fail.\r\n");
 		return (-1)
 			;
@@ -269,9 +269,9 @@ int Ethernet_Init(void)
 	/* PHY link status check */
 	//overtime =0;
 	do {
-		if (ctlwizchip(CW_GET_PHYLINK, (void*) &tmp) == -1)
+		if (ctlwizchip(CW_GET_PHYLINK, (void*)&tmp) == -1)
 			printf("Unknown PHY Link status.\r\n");
-		if(TIM4_GetCurrentTime()>0xFFFFFF)
+		if (TIM4_GetCurrentTime() > 0xFFFFFF)
 			return -1;
 	} while (tmp == PHY_LINK_OFF);
 
@@ -281,7 +281,7 @@ int Ethernet_Init(void)
 
 	return 0;
 }
-	
+
 
 
 
@@ -290,12 +290,12 @@ int Ethernet_main(void) {
 	int32_t ret = 0;
 	uint8_t sn = 0;
 
-Ethernet_Init();
+	Ethernet_Init();
 
 	while (1) {
 
 #if 0
-		if(GetIsTimeElapsed())
+		if (GetIsTimeElapsed())
 		{
 			SetIsTimeElapsed(0);
 			printf("Time Elapsed\r\n");
@@ -313,7 +313,7 @@ Ethernet_Init();
 		}
 #endif
 #if 0
-		if((ret = rcvonly_tcps(sn, gDATABUF, 3000)) < 0)
+		if ((ret = rcvonly_tcps(sn, gDATABUF, 3000)) < 0)
 		{
 			printf("%d:loopback_tcps error:%d\r\n", sn, ret);
 			break;
@@ -322,5 +322,7 @@ Ethernet_Init();
 	}
 	return 0;
 }
+
+
 
 

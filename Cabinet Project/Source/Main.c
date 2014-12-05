@@ -3,7 +3,6 @@
 #include "config.h"
 char *str = "\r\n This is a USART1_printf demo \r\n";
 
-
 int main()
 {
 	uint8_t i;
@@ -19,36 +18,37 @@ int main()
 	{
 		LOCKn_ONOFF(i, 0);
 	}
-	Delay_ms(1000);
-	for (i = 0; i < 25; i++)
-	{
-		LOCKn_ONOFF(i, 1);
-	}
+//	Delay_ms(1000);
+//	for (i = 0; i < 25; i++)
+//	{
+//		LOCKn_ONOFF(i, 1);
+//	}
 	TIM2_Start();
 	TIM4_Start();//用来做网络延时计时使用
 
 	USART1_Config();
-	//Ethernet_Init();
+	Ethernet_Init();
 	//Ethernet_main();
 	printf("%slist", str);
 
 	while (1)
 	{
-		for (i = 0; i < 25; i++)
-		{
-			if (GetSensorStatus(i))
-			{
-				LOCKn_ONOFF(i, 1);
-			}
-			else
-			{
-				LOCKn_ONOFF(i, 0);
-			}
-		}
-		for (i = 0; i < 5; i++)
-		{
-			Locker_open(i);
-		}
+//		for (i = 0; i < 25; i++)
+//		{
+//			if (GetSensorStatus(i))
+//			{
+//				LOCKn_ONOFF(i, 1);
+//			}
+//			else
+//			{
+//				LOCKn_ONOFF(i, 0);
+//			}
+//		}
+//		for (i = 0; i < 5; i++)
+//		{
+//			Locker_open(i);
+//		}
+		Application();
 		//loopback_tcpc(1);
 		Time = time4;
 		printf("Time1 :%x \r\n", Time);
@@ -67,7 +67,6 @@ int main()
 	}
 	//return 0;
 }
-
 
 #ifdef  USE_FULL_ASSERT
 

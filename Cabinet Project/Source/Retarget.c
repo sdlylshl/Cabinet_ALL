@@ -18,53 +18,63 @@
 #include "stm32f10x.h"
 #pragma import(__use_no_semihosting_swi)
 //voeride
- int SER_GetChar(void){	
-	 int ch;
-	while(USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET)
+int SER_GetChar(void)
+{
+	int ch;
+	while (USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET)
 	{
 	}
 	ch = USART_ReceiveData(USART1);
 	return ch;
 }
-int SER_PutChar(char ch){
-	 // Write a character to the USART
-  USART_SendData(USART1, (uint8_t) ch);
-  
-  //  Loop until the end of transmission
-  //while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET){}
-  while( USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET );
-  return ch;
-	
+int SER_PutChar(char ch)
+{
+	// Write a character to the USART
+	USART_SendData(USART1, (uint8_t)ch);
+
+	//  Loop until the end of transmission
+	//while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET){}
+	while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET);
+	return ch;
+
 }
 
-struct __FILE { int handle; /* Add whatever you need here */ };
+struct __FILE
+{
+	int handle; /* Add whatever you need here */
+};
 FILE __stdout;
 FILE __stdin;
 
-//MicroLIB重定向c库函数printf到USART
-int fputc(int c, FILE *f) {
-  return (SER_PutChar(c));
+//MicroLIB閲嶅畾鍚慶搴撳嚱鏁皃rintf鍒癠SART
+int fputc(int c, FILE *f)
+{
+	return (SER_PutChar(c));
 	//return 0;
 }
 
 
-int fgetc(FILE *f) {
-  return (SER_GetChar());
+int fgetc(FILE *f)
+{
+	return (SER_GetChar());
 	//return 0;
 }
 
 
-int ferror(FILE *f) {
-  /* Your implementation of ferror */
-  return EOF;
+int ferror(FILE *f)
+{
+	/* Your implementation of ferror */
+	return EOF;
 }
 
 
-void _ttywrch(int c) {
-  SER_PutChar(c);
+void _ttywrch(int c)
+{
+	SER_PutChar(c);
 }
 
 
-void _sys_exit(int return_code) {
+void _sys_exit(int return_code)
+{
 label:  goto label;  /* endless loop */
 }
